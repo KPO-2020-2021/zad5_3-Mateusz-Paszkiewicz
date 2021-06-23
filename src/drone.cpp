@@ -242,7 +242,7 @@ bool Drone::DrawHorizontalFlight(Vector3 PathVector, PzG::LaczeDoGNUPlota Lacze)
     return false;
 }
 
-double Drone::GetRadius()
+double Drone::GetDiameter()
 {
-  return (this->Rotor[0].GetPosition() - this->Body.GetPosition()).Length();
+  return ( this->Rotor[0].GetPosition() - this->Rotor[0](0) ).Length() + (this->Body.GetPosition() - this->Body(0) ).Length();
 }

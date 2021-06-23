@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/tests/dummy.cpp" "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/unit_tests.dir/dummy.cpp.o"
-  "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/tests/main.cpp" "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/unit_tests.dir/main.cpp.o"
+  "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/tests/testrunner.cpp" "/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/unit_tests.dir/testrunner.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +16,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
-  "../inc"
+  "../include"
   "../external/doctest/doctest"
   )
 

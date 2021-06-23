@@ -122,6 +122,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named engine
+
+# Build rule for target.
+engine: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 engine
+.PHONY : engine
+
+# fast build rule for target.
+engine/fast:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
+.PHONY : engine/fast
+
+#=============================================================================
 # Target rules for targets named doc
 
 # Build rule for target.
@@ -421,19 +434,6 @@ ExperimentalStart/fast:
 .PHONY : ExperimentalStart/fast
 
 #=============================================================================
-# Target rules for targets named program
-
-# Build rule for target.
-program: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 program
-.PHONY : program
-
-# fast build rule for target.
-program/fast:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
-.PHONY : program/fast
-
-#=============================================================================
 # Target rules for targets named NightlyBuild
 
 # Build rule for target.
@@ -525,19 +525,6 @@ ContinuousSubmit/fast:
 .PHONY : ContinuousSubmit/fast
 
 #=============================================================================
-# Target rules for targets named fulltest
-
-# Build rule for target.
-fulltest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 fulltest
-.PHONY : fulltest
-
-# fast build rule for target.
-fulltest/fast:
-	$(MAKE) -f tests/CMakeFiles/fulltest.dir/build.make tests/CMakeFiles/fulltest.dir/build
-.PHONY : fulltest/fast
-
-#=============================================================================
 # Target rules for targets named coverage
 
 # Build rule for target.
@@ -590,32 +577,113 @@ app/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/app/main.cpp.s
 .PHONY : app/main.cpp.s
 
-src/example.o: src/example.cpp.o
+src/cuboid.o: src/cuboid.cpp.o
 
-.PHONY : src/example.o
+.PHONY : src/cuboid.o
 
 # target to build an object file
-src/example.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.o
-.PHONY : src/example.cpp.o
+src/cuboid.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/cuboid.cpp.o
+.PHONY : src/cuboid.cpp.o
 
-src/example.i: src/example.cpp.i
+src/cuboid.i: src/cuboid.cpp.i
 
-.PHONY : src/example.i
+.PHONY : src/cuboid.i
 
 # target to preprocess a source file
-src/example.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.i
-.PHONY : src/example.cpp.i
+src/cuboid.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/cuboid.cpp.i
+.PHONY : src/cuboid.cpp.i
 
-src/example.s: src/example.cpp.s
+src/cuboid.s: src/cuboid.cpp.s
 
-.PHONY : src/example.s
+.PHONY : src/cuboid.s
 
 # target to generate assembly for a file
-src/example.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/example.cpp.s
-.PHONY : src/example.cpp.s
+src/cuboid.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/cuboid.cpp.s
+.PHONY : src/cuboid.cpp.s
+
+src/drone.o: src/drone.cpp.o
+
+.PHONY : src/drone.o
+
+# target to build an object file
+src/drone.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/drone.cpp.o
+.PHONY : src/drone.cpp.o
+
+src/drone.i: src/drone.cpp.i
+
+.PHONY : src/drone.i
+
+# target to preprocess a source file
+src/drone.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/drone.cpp.i
+.PHONY : src/drone.cpp.i
+
+src/drone.s: src/drone.cpp.s
+
+.PHONY : src/drone.s
+
+# target to generate assembly for a file
+src/drone.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/drone.cpp.s
+.PHONY : src/drone.cpp.s
+
+src/environment.o: src/environment.cpp.o
+
+.PHONY : src/environment.o
+
+# target to build an object file
+src/environment.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/environment.cpp.o
+.PHONY : src/environment.cpp.o
+
+src/environment.i: src/environment.cpp.i
+
+.PHONY : src/environment.i
+
+# target to preprocess a source file
+src/environment.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/environment.cpp.i
+.PHONY : src/environment.cpp.i
+
+src/environment.s: src/environment.cpp.s
+
+.PHONY : src/environment.s
+
+# target to generate assembly for a file
+src/environment.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/environment.cpp.s
+.PHONY : src/environment.cpp.s
+
+src/handling.o: src/handling.cpp.o
+
+.PHONY : src/handling.o
+
+# target to build an object file
+src/handling.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/handling.cpp.o
+.PHONY : src/handling.cpp.o
+
+src/handling.i: src/handling.cpp.i
+
+.PHONY : src/handling.i
+
+# target to preprocess a source file
+src/handling.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/handling.cpp.i
+.PHONY : src/handling.cpp.i
+
+src/handling.s: src/handling.cpp.s
+
+.PHONY : src/handling.s
+
+# target to generate assembly for a file
+src/handling.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/handling.cpp.s
+.PHONY : src/handling.cpp.s
 
 src/lacze_do_gnuplota.o: src/lacze_do_gnuplota.cpp.o
 
@@ -623,7 +691,7 @@ src/lacze_do_gnuplota.o: src/lacze_do_gnuplota.cpp.o
 
 # target to build an object file
 src/lacze_do_gnuplota.cpp.o:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.o
 .PHONY : src/lacze_do_gnuplota.cpp.o
 
 src/lacze_do_gnuplota.i: src/lacze_do_gnuplota.cpp.i
@@ -632,7 +700,7 @@ src/lacze_do_gnuplota.i: src/lacze_do_gnuplota.cpp.i
 
 # target to preprocess a source file
 src/lacze_do_gnuplota.cpp.i:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.i
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.i
 .PHONY : src/lacze_do_gnuplota.cpp.i
 
 src/lacze_do_gnuplota.s: src/lacze_do_gnuplota.cpp.s
@@ -641,8 +709,62 @@ src/lacze_do_gnuplota.s: src/lacze_do_gnuplota.cpp.s
 
 # target to generate assembly for a file
 src/lacze_do_gnuplota.cpp.s:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.s
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.s
 .PHONY : src/lacze_do_gnuplota.cpp.s
+
+src/prism.o: src/prism.cpp.o
+
+.PHONY : src/prism.o
+
+# target to build an object file
+src/prism.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/prism.cpp.o
+.PHONY : src/prism.cpp.o
+
+src/prism.i: src/prism.cpp.i
+
+.PHONY : src/prism.i
+
+# target to preprocess a source file
+src/prism.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/prism.cpp.i
+.PHONY : src/prism.cpp.i
+
+src/prism.s: src/prism.cpp.s
+
+.PHONY : src/prism.s
+
+# target to generate assembly for a file
+src/prism.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/prism.cpp.s
+.PHONY : src/prism.cpp.s
+
+src/rectangle.o: src/rectangle.cpp.o
+
+.PHONY : src/rectangle.o
+
+# target to build an object file
+src/rectangle.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/rectangle.cpp.o
+.PHONY : src/rectangle.cpp.o
+
+src/rectangle.i: src/rectangle.cpp.i
+
+.PHONY : src/rectangle.i
+
+# target to preprocess a source file
+src/rectangle.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/rectangle.cpp.i
+.PHONY : src/rectangle.cpp.i
+
+src/rectangle.s: src/rectangle.cpp.s
+
+.PHONY : src/rectangle.s
+
+# target to generate assembly for a file
+src/rectangle.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/rectangle.cpp.s
+.PHONY : src/rectangle.cpp.s
 
 # Help Target
 help:
@@ -651,6 +773,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... engine"
 	@echo "... test"
 	@echo "... doc"
 	@echo "... edit_cache"
@@ -676,7 +799,6 @@ help:
 	@echo "... ExperimentalCoverage"
 	@echo "... NightlyCoverage"
 	@echo "... ExperimentalStart"
-	@echo "... program"
 	@echo "... NightlyBuild"
 	@echo "... ExperimentalBuild"
 	@echo "... ExperimentalUpdate"
@@ -684,18 +806,32 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
-	@echo "... fulltest"
 	@echo "... coverage"
 	@echo "... unit_tests"
 	@echo "... app/main.o"
 	@echo "... app/main.i"
 	@echo "... app/main.s"
-	@echo "... src/example.o"
-	@echo "... src/example.i"
-	@echo "... src/example.s"
+	@echo "... src/cuboid.o"
+	@echo "... src/cuboid.i"
+	@echo "... src/cuboid.s"
+	@echo "... src/drone.o"
+	@echo "... src/drone.i"
+	@echo "... src/drone.s"
+	@echo "... src/environment.o"
+	@echo "... src/environment.i"
+	@echo "... src/environment.s"
+	@echo "... src/handling.o"
+	@echo "... src/handling.i"
+	@echo "... src/handling.s"
 	@echo "... src/lacze_do_gnuplota.o"
 	@echo "... src/lacze_do_gnuplota.i"
 	@echo "... src/lacze_do_gnuplota.s"
+	@echo "... src/prism.o"
+	@echo "... src/prism.i"
+	@echo "... src/prism.s"
+	@echo "... src/rectangle.o"
+	@echo "... src/rectangle.i"
+	@echo "... src/rectangle.s"
 .PHONY : help
 
 

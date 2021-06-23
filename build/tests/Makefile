@@ -122,21 +122,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/fulltest.dir/rule:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/fulltest.dir/rule
-.PHONY : tests/CMakeFiles/fulltest.dir/rule
-
-# Convenience name for target.
-fulltest: tests/CMakeFiles/fulltest.dir/rule
-
-.PHONY : fulltest
-
-# fast build rule for target.
-fulltest/fast:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/fulltest.dir/build.make tests/CMakeFiles/fulltest.dir/build
-.PHONY : fulltest/fast
-
-# Convenience name for target.
 tests/CMakeFiles/coverage.dir/rule:
 	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/coverage.dir/rule
 .PHONY : tests/CMakeFiles/coverage.dir/rule
@@ -166,59 +151,32 @@ unit_tests/fast:
 	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/build
 .PHONY : unit_tests/fast
 
-dummy.o: dummy.cpp.o
+testrunner.o: testrunner.cpp.o
 
-.PHONY : dummy.o
-
-# target to build an object file
-dummy.cpp.o:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/dummy.cpp.o
-.PHONY : dummy.cpp.o
-
-dummy.i: dummy.cpp.i
-
-.PHONY : dummy.i
-
-# target to preprocess a source file
-dummy.cpp.i:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/dummy.cpp.i
-.PHONY : dummy.cpp.i
-
-dummy.s: dummy.cpp.s
-
-.PHONY : dummy.s
-
-# target to generate assembly for a file
-dummy.cpp.s:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/dummy.cpp.s
-.PHONY : dummy.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : testrunner.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/main.cpp.o
-.PHONY : main.cpp.o
+testrunner.cpp.o:
+	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/testrunner.cpp.o
+.PHONY : testrunner.cpp.o
 
-main.i: main.cpp.i
+testrunner.i: testrunner.cpp.i
 
-.PHONY : main.i
+.PHONY : testrunner.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/main.cpp.i
-.PHONY : main.cpp.i
+testrunner.cpp.i:
+	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/testrunner.cpp.i
+.PHONY : testrunner.cpp.i
 
-main.s: main.cpp.s
+testrunner.s: testrunner.cpp.s
 
-.PHONY : main.s
+.PHONY : testrunner.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/main.cpp.s
-.PHONY : main.cpp.s
+testrunner.cpp.s:
+	cd /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build && $(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/testrunner.cpp.s
+.PHONY : testrunner.cpp.s
 
 # Help Target
 help:
@@ -229,15 +187,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... fulltest"
 	@echo "... coverage"
 	@echo "... unit_tests"
-	@echo "... dummy.o"
-	@echo "... dummy.i"
-	@echo "... dummy.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... testrunner.o"
+	@echo "... testrunner.i"
+	@echo "... testrunner.s"
 .PHONY : help
 
 

@@ -1,4 +1,5 @@
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/rebuild_cache.dir
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/test.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/doc.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/edit_cache.dir
@@ -24,7 +25,6 @@
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/ExperimentalCoverage.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/NightlyCoverage.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/ExperimentalStart.dir
-/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/program.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/NightlyBuild.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/ExperimentalBuild.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/ExperimentalUpdate.dir
@@ -35,6 +35,5 @@
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/rebuild_cache.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/edit_cache.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/test.dir
-/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/fulltest.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/coverage.dir
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/tests/CMakeFiles/unit_tests.dir

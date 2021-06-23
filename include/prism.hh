@@ -27,6 +27,8 @@ public:
 
   Vector3 GetPosition();
 
+  Vector3 operator () (unsigned int);
+
   friend class Drone;
 };
 

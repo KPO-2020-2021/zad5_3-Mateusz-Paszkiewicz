@@ -53,8 +53,8 @@ CMAKE_BINARY_DIR = /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkie
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/engine.dir/all
 all: CMakeFiles/main.dir/all
-all: CMakeFiles/program.dir/all
 all: tests/all
 
 .PHONY : all
@@ -65,6 +65,7 @@ preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/engine.dir/clean
 clean: CMakeFiles/doc.dir/clean
 clean: CMakeFiles/NightlyMemCheck.dir/clean
 clean: CMakeFiles/main.dir/clean
@@ -88,7 +89,6 @@ clean: CMakeFiles/NightlyStart.dir/clean
 clean: CMakeFiles/ExperimentalCoverage.dir/clean
 clean: CMakeFiles/NightlyCoverage.dir/clean
 clean: CMakeFiles/ExperimentalStart.dir/clean
-clean: CMakeFiles/program.dir/clean
 clean: CMakeFiles/NightlyBuild.dir/clean
 clean: CMakeFiles/ExperimentalBuild.dir/clean
 clean: CMakeFiles/ExperimentalUpdate.dir/clean
@@ -114,11 +114,37 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/fulltest.dir/clean
 tests/clean: tests/CMakeFiles/coverage.dir/clean
 tests/clean: tests/CMakeFiles/unit_tests.dir/clean
 
 .PHONY : tests/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/engine.dir
+
+# All Build rule for target.
+CMakeFiles/engine.dir/all:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/depend
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=2,3,4,5,6,7,8 "Built target engine"
+.PHONY : CMakeFiles/engine.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/engine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/engine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 0
+.PHONY : CMakeFiles/engine.dir/rule
+
+# Convenience name for target.
+engine: CMakeFiles/engine.dir/rule
+
+.PHONY : engine
+
+# clean rule for target.
+CMakeFiles/engine.dir/clean:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/clean
+.PHONY : CMakeFiles/engine.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doc.dir
@@ -178,15 +204,15 @@ CMakeFiles/NightlyMemCheck.dir/clean:
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: CMakeFiles/program.dir/all
+CMakeFiles/main.dir/all: CMakeFiles/engine.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=2,3 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=9,10 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
@@ -742,33 +768,6 @@ CMakeFiles/ExperimentalStart.dir/clean:
 .PHONY : CMakeFiles/ExperimentalStart.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/program.dir
-
-# All Build rule for target.
-CMakeFiles/program.dir/all:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/depend
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=4,5 "Built target program"
-.PHONY : CMakeFiles/program.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/program.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/program.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 0
-.PHONY : CMakeFiles/program.dir/rule
-
-# Convenience name for target.
-program: CMakeFiles/program.dir/rule
-
-.PHONY : program
-
-# clean rule for target.
-CMakeFiles/program.dir/clean:
-	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/clean
-.PHONY : CMakeFiles/program.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/NightlyBuild.dir
 
 # All Build rule for target.
@@ -958,33 +957,6 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 .PHONY : CMakeFiles/ContinuousSubmit.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/fulltest.dir
-
-# All Build rule for target.
-tests/CMakeFiles/fulltest.dir/all: tests/CMakeFiles/unit_tests.dir/all
-	$(MAKE) -f tests/CMakeFiles/fulltest.dir/build.make tests/CMakeFiles/fulltest.dir/depend
-	$(MAKE) -f tests/CMakeFiles/fulltest.dir/build.make tests/CMakeFiles/fulltest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num= "Built target fulltest"
-.PHONY : tests/CMakeFiles/fulltest.dir/all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/fulltest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/fulltest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/fulltest.dir/rule
-
-# Convenience name for target.
-fulltest: tests/CMakeFiles/fulltest.dir/rule
-
-.PHONY : fulltest
-
-# clean rule for target.
-tests/CMakeFiles/fulltest.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/fulltest.dir/build.make tests/CMakeFiles/fulltest.dir/clean
-.PHONY : tests/CMakeFiles/fulltest.dir/clean
-
-#=============================================================================
 # Target rules for target tests/CMakeFiles/coverage.dir
 
 # All Build rule for target.
@@ -1015,15 +987,15 @@ tests/CMakeFiles/coverage.dir/clean:
 # Target rules for target tests/CMakeFiles/unit_tests.dir
 
 # All Build rule for target.
-tests/CMakeFiles/unit_tests.dir/all: CMakeFiles/program.dir/all
+tests/CMakeFiles/unit_tests.dir/all: CMakeFiles/engine.dir/all
 	$(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/depend
 	$(MAKE) -f tests/CMakeFiles/unit_tests.dir/build.make tests/CMakeFiles/unit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=6,7,8 "Built target unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=11,12 "Built target unit_tests"
 .PHONY : tests/CMakeFiles/unit_tests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/unit_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/unit_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/unit_tests.dir/rule

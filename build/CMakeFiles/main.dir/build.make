@@ -76,12 +76,22 @@ main_OBJECTS = \
 
 # External object files for target main
 main_EXTERNAL_OBJECTS = \
-"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/program.dir/src/example.cpp.o" \
-"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o"
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/rectangle.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/cuboid.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/prism.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/drone.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/handling.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.o" \
+"/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles/engine.dir/src/environment.cpp.o"
 
 main: CMakeFiles/main.dir/app/main.cpp.o
-main: CMakeFiles/program.dir/src/example.cpp.o
-main: CMakeFiles/program.dir/src/lacze_do_gnuplota.cpp.o
+main: CMakeFiles/engine.dir/src/rectangle.cpp.o
+main: CMakeFiles/engine.dir/src/cuboid.cpp.o
+main: CMakeFiles/engine.dir/src/prism.cpp.o
+main: CMakeFiles/engine.dir/src/drone.cpp.o
+main: CMakeFiles/engine.dir/src/handling.cpp.o
+main: CMakeFiles/engine.dir/src/lacze_do_gnuplota.cpp.o
+main: CMakeFiles/engine.dir/src/environment.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"

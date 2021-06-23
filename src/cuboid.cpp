@@ -194,3 +194,20 @@ Vector3 Cuboid::GetPosition()
 
   return (*this).Position;
 }
+
+
+Vector3 Cuboid::operator () (unsigned int pointNum)    //This overload is very important
+{
+  if (pointNum >= 8) {
+      std::cout << "Error: Wrong parameter. Only 8 Points in a Cuboid";
+      exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
+  }
+  double PointArr[3]={this->point[pointNum][0],
+                      this->point[pointNum][1],
+                      this->point[pointNum][2]};
+
+
+  Vector3 Result = Vector3(PointArr);
+
+  return Result;
+}

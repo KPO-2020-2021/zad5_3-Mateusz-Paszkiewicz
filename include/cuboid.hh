@@ -54,5 +54,5 @@ public:
 
   Vector3 operator () (unsigned int);
 
-  friend class Drone;
+  //friend class Drone;
 };

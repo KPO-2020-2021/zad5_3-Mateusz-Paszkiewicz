@@ -21,6 +21,8 @@ tgmath.h
 -
 unistd.h
 -
+environment.hh
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/environment.hh
 lacze_do_gnuplota.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/lacze_do_gnuplota.hh
 handling.hh
@@ -31,8 +33,6 @@ cuboid.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/cuboid.hh
 prism.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/prism.hh
-environment.hh
-/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/environment.hh
 
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/environment.hh
 string
@@ -113,4 +113,8 @@ cmath
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/src/drone.cpp
 ../include/drone.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/drone.hh
+
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/src/environment.cpp
+../include/environment.hh
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/include/environment.hh
 

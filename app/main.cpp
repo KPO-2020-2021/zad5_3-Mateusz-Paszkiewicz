@@ -76,12 +76,10 @@ int main() {
   PzG::LaczeDoGNUPlota  Lacze;
   Scene Main_Scene=Scene();
 
+  //Config Begin--------------------------------
   Lacze.ZmienTrybRys(PzG::TR_3D);
   Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
-
   Lacze.UstawRotacjeXZ(50,250); // Tutaj ustawiany jest widok
-
-
   Lacze.DodajNazwePliku(WORK_FILE__DRONE1_BODY);
   Lacze.DodajNazwePliku(WORK_FILE__DRONE1_ROTOR1);
   Lacze.DodajNazwePliku(WORK_FILE__DRONE1_ROTOR2);
@@ -89,15 +87,17 @@ int main() {
   Lacze.DodajNazwePliku(WORK_FILE__DRONE1_ROTOR4);
   Lacze.DodajNazwePliku(ROUTE_FILE);
   Lacze.DodajNazwePliku(PLAIN_FILE);
-
   Lacze.UstawZakresX(0, 200);
   Lacze.UstawZakresY(0, 200);
   Lacze.UstawZakresZ(0, 90);
-
   Lacze.ZmienTrybRys(PzG::TR_3D);
   Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
 
-
+  double ascension[3]={0,0,80};
+  Vector3 AscensionVector=Vector3(ascension);
+  double descent[3]={0,0,-80};
+  Vector3 DescentVector=Vector3(descent);
+  //Config End--------------------------------------
 
 
   Drone Drone1=Drone();
@@ -106,10 +106,14 @@ int main() {
 
   Main_Scene.AddDrone(Drone1);
 
-  double ascension[3]={0,0,80};
-  Vector3 AscensionVector=Vector3(ascension);
-  double descent[3]={0,0,-80};
-  Vector3 DescentVector=Vector3(descent);
+//------ Hardwired objects-----
+  double arr[3]={100, 100, 0};
+  Vector3 HWired=Vector3(arr);
+
+  Plateau Object=Plateau();
+  Object.CreatePlateau(ACTUAL_FILE__PLATEAU, HWired , Lacze);
+  Main_Scene.AddPlateau(Object);
+//------ Hardwired objects-----
 
   char option;
   std::string obsticle;
@@ -161,7 +165,6 @@ Menu:
 
     case 'f':
     {
-      std::cout<<"Flying the drone..."<<std::endl;
       goto Flying;
     }
     case 'q':
@@ -186,6 +189,7 @@ Flying:
 
   Vector3 PathVec=Drone1.PlanPath();
 
+  Drone1.IsLandingPossible(Main_Scene);
   Drone1.AdjustOrientation(Lacze);
   getchar();
   Drone1.Idle(15, Lacze);

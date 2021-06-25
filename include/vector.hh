@@ -53,7 +53,7 @@ std::ostream &operator << (std::ostream &out, Vector<T, dime> const &tmp);
 template<typename T, unsigned int dime>
 std::istream &operator >> (std::istream &in, Vector<T, dime> &tmp);
 
-/*!
+/*
 * Konstruktor klasy Vector.
 *
 * \param[in] - Brak argumentow.

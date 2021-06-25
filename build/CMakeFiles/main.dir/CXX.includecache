@@ -21,6 +21,8 @@ tgmath.h
 -
 unistd.h
 -
+environment.hh
+../include/environment.hh
 lacze_do_gnuplota.hh
 ../include/lacze_do_gnuplota.hh
 handling.hh
@@ -31,8 +33,6 @@ cuboid.hh
 ../include/cuboid.hh
 prism.hh
 ../include/prism.hh
-environment.hh
-../include/environment.hh
 
 ../include/environment.hh
 string
@@ -107,10 +107,10 @@ list
 -
 vector
 -
-drone.hh
-../include/drone.hh
 environment.hh
 ../include/environment.hh
+drone.hh
+../include/drone.hh
 
 ../include/size.hh
 

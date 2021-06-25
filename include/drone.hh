@@ -6,12 +6,12 @@
 #include <tgmath.h>
 #include <unistd.h>
 
+#include "environment.hh"
 #include "lacze_do_gnuplota.hh"
 #include "handling.hh"
 #include "matrix.hh"
 #include "cuboid.hh"
 #include "prism.hh"
-#include "environment.hh"
 
 /*          DRONE CLASS VISUALISATION (i tried xD)
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄▄▄▄░░░░░░░░░░░░░░░░░░░░
@@ -81,8 +81,9 @@ public:
 
   bool DrawHorizontalFlight(Vector3, PzG::LaczeDoGNUPlota);
 
-  double GetDiameter();
+  virtual double GetDiameter() override;
 
-  bool IsLandingPossible( const Scene & ) const;
+  bool IsLandingPossible( const Scene &Current_Scene ) const;
 
+  friend class SceneObject;
 };

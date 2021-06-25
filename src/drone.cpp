@@ -177,11 +177,6 @@ bool Drone::AdjustOrientation(PzG::LaczeDoGNUPlota Lacze)
   double Angle;
   double OrientationToPathScalar=this->FindOrientation()*this->PlanPath();
 
-  /*std::cout<<this->Orientation;
-
-  std::cout<<OrientationToPathScalar<<std::endl;
-  std::cout<<Orientation.Length()<<std::endl;
-  std::cout<<this->PlanPath().Length()<<std::endl;*/
 
   Angle=acos( OrientationToPathScalar/Orientation.Length()/this->PlanPath().Length()  );
   std::cout<<Angle*180/M_PI;
@@ -189,7 +184,6 @@ bool Drone::AdjustOrientation(PzG::LaczeDoGNUPlota Lacze)
   if(Angle*180/M_PI>180)
     Angle=Angle-2*M_PI;
 
-  std::cout<<Angle*180/M_PI;
 
   this->DrawDroneRotation(Angle*180/M_PI/2, Lacze);
 

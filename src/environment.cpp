@@ -2,6 +2,11 @@
 
 int SceneObject::ObjCount=0;
 
+double SceneObject::GetDiameter()
+{
+  return ( this->Structure.GetPosition() - this->Structure(0) ).Length() ;
+}
+
 SpikyHill SpikyHill::CreateSpikyHill(const char *File_Name, Vector3 StartPoint , PzG::LaczeDoGNUPlota Lacze)
 {
   ++this->ObjCount;
@@ -46,17 +51,6 @@ SpikyHill SpikyHill:: operator - (Vector3 &tmp)
   return (*this);
 }
 
-double SpikyHill::GetRadius()
-{
-  double RadiusArr[3] ={(this->Structure(6,0)-this->Structure(5,0))/2,
-                        (this->Structure(6,1)-this->Structure(5,1))/2,
-                        (this->Structure(6,2)-this->Structure(5,2))/2};
-
-  Vector3 Radius = Vector3(RadiusArr);
-
-  return Radius.Length();
-}
-
 Plateau Plateau::CreatePlateau(const char *File_Name, Vector3 StartPoint , PzG::LaczeDoGNUPlota Lacze)
 {
   ++this->ObjCount;
@@ -86,17 +80,6 @@ Plateau Plateau::CreatePlateau(const char *File_Name, Vector3 StartPoint , PzG::
   Lacze.Rysuj();
 
   return (*this);
-}
-
-double Plateau::GetRadius()
-{
-  double RadiusArr[3] ={(this->Structure(6,0)-this->Structure(5,0))/2,
-                        (this->Structure(6,1)-this->Structure(5,1))/2,
-                        (this->Structure(6,2)-this->Structure(5,2))/2};
-
-  Vector3 Radius = Vector3(RadiusArr);
-
-  return Radius.Length();
 }
 
 Plateau Plateau:: operator + (Vector3 &tmp)
@@ -144,17 +127,6 @@ Ridge Ridge::CreateRidge(const char *File_Name, Vector3 StartPoint , PzG::LaczeD
   Lacze.Rysuj();
 
   return (*this);
-}
-
-double Ridge::GetRadius()
-{
-  double RadiusArr[3] ={(this->Structure(6,0)-this->Structure(5,0))/2,
-                        (this->Structure(6,1)-this->Structure(5,1))/2,
-                        (this->Structure(6,2)-this->Structure(5,2))/2};
-
-  Vector3 Radius = Vector3(RadiusArr);
-
-  return Radius.Length();
 }
 
 Ridge Ridge:: operator + (Vector3 &tmp)

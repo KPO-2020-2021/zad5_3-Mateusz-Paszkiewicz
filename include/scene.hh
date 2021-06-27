@@ -7,6 +7,14 @@
 #include "environment.hh"
 #include "drone.hh"
 
+/*!
+*\brief Klasa Scene zawiera listy ze wszystkimi obiektami na scenie
+*
+*
+* Ta klasa za pomoca dwoch list shared_ptr przechowuje wskazniki
+* na kazdy obiekt ktory bedzie wyswietlony na scenie
+*
+*/
 class Scene {
   std::list<std::shared_ptr<SceneObject>>  _SceneObjectList;
   std::list<std::shared_ptr<Drone>>        _DroneList;
@@ -54,11 +62,6 @@ bool SceneObject::DoDiametersInterfere( double Radius, Vector3 Center )
   Vector3 CentersConnected = this->Structure.GetPosition() - Center;
   CentersConnected[2]=0;
 
-  std::cout<<Radius<<" "<<this->GetDiameter()<<std::endl;
-
-  /*std::cout<<Radius+this->GetDiameter()<<std::endl;
-  std::cout<<CentersConnected.Length()<<std::endl;*/
-
   if( Radius+this->GetDiameter() >= CentersConnected.Length())
     return true;
   else
@@ -67,11 +70,8 @@ bool SceneObject::DoDiametersInterfere( double Radius, Vector3 Center )
 
 bool Drone::IsLandingPossible( const Scene &Current_Scene ) const
 {
-  //std::shared_ptr<SceneObject> WOb=std::make_shared<Drone>(*this);
-
   for (const std::shared_ptr<SceneObject> &Ptr_SceneObjects : Current_Scene.GetSceneObjList()  ) {
-    //SceneObject *tmp=Ptr_SceneObjects.get();
-    if (Ptr_SceneObjects.get() == this ) {continue;}
+    if (Ptr_SceneObjects.get() == this ) continue;
     if (Ptr_SceneObjects->DoDiametersInterfere( const_cast<Drone *>(this)->GetDiameter(), const_cast<Drone *>(this)->Body.GetPosition()+const_cast<Drone *>(this)->PlanPath() )==true)
     {
       std::cout<<"Landing site obstructed! Aborted flight!"<<std::endl;

@@ -1,0 +1,190 @@
+\hypertarget{class_cuboid}{}\doxysection{Cuboid Class Reference}
+\label{class_cuboid}\index{Cuboid@{Cuboid}}
+
+
+Klasa prostopadloscianu w postaci tablicy dwuwymiarowej oraz jej metody.  
+
+
+
+
+{\ttfamily \#include $<$cuboid.\+hh$>$}
+
+
+
+Inheritance diagram for Cuboid\+:
+% FIG 0
+
+
+Collaboration diagram for Cuboid\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cuboid_a1abf60e93d024b7a01ee5b1a48f1f08a}{Cuboid}} ()
+\item 
+\mbox{\hyperlink{class_cuboid_a4a5e182eb2797a62516ba9cf84067d99}{Cuboid}} (double\mbox{[}8\mbox{]}\mbox{[}3\mbox{]})
+\item 
+\mbox{\hyperlink{class_cuboid}{Cuboid}} \mbox{\hyperlink{class_cuboid_a0ae1039afcf2a9d668023847d1339478}{operator$\ast$}} (\mbox{\hyperlink{class_matrix}{Matrix3x3}} \&)
+\item 
+\mbox{\hyperlink{class_cuboid}{Cuboid}} \mbox{\hyperlink{class_cuboid_aa1526465352afcd1c0cd357c60ef992a}{operator+}} (\mbox{\hyperlink{class_vector}{Vector3}} \&)
+\item 
+const double \& \mbox{\hyperlink{class_cuboid_a2a50a1436eb8a46d552fc6f49a1e569c}{operator()}} (unsigned int, unsigned int) const
+\item 
+double \& \mbox{\hyperlink{class_cuboid_ab04adff05fcf0693c912c2ce1588fea3}{operator()}} (unsigned int, unsigned int)
+\item 
+\mbox{\hyperlink{class_cuboid}{Cuboid}} \mbox{\hyperlink{class_cuboid_aab0f178d1c83490b3913996614f72bc4}{Angle\+Trans}} (double Angle, char axis)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa prostopadloscianu w postaci tablicy dwuwymiarowej oraz jej metody. 
+
+Klasa prostopadloscianu w postaci tablicy 8x3 gdzie kazdy kazdy z rzedow jest zestawem punktow x, y ,z oraz metody i funkcje potrzebne do zrealizowania obrotow 3D. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cuboid_a1abf60e93d024b7a01ee5b1a48f1f08a}\label{class_cuboid_a1abf60e93d024b7a01ee5b1a48f1f08a}} 
+\index{Cuboid@{Cuboid}!Cuboid@{Cuboid}}
+\index{Cuboid@{Cuboid}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{Cuboid()}{Cuboid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cuboid\+::\+Cuboid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Konstruktor objektu klasy cuboid (bezparametryczny)
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{class_cuboid}{Cuboid}}} & Class object of coords 0 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_cuboid_a4a5e182eb2797a62516ba9cf84067d99}\label{class_cuboid_a4a5e182eb2797a62516ba9cf84067d99}} 
+\index{Cuboid@{Cuboid}!Cuboid@{Cuboid}}
+\index{Cuboid@{Cuboid}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{Cuboid()}{Cuboid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cuboid\+::\+Cuboid (\begin{DoxyParamCaption}\item[{double}]{tmp\mbox{[}8\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Konstruktor objektu klasy cuboid (parametryczny)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp\mbox{[}8\mbox{]}\mbox{[}3\mbox{]}} & -\/ array of coords where the row is the point number and column is the axis \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{class_cuboid}{Cuboid}}} & Class object of coords 0 \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cuboid_aab0f178d1c83490b3913996614f72bc4}\label{class_cuboid_aab0f178d1c83490b3913996614f72bc4}} 
+\index{Cuboid@{Cuboid}!AngleTrans@{AngleTrans}}
+\index{AngleTrans@{AngleTrans}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{AngleTrans()}{AngleTrans()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cuboid}{Cuboid}} Cuboid\+::\+Angle\+Trans (\begin{DoxyParamCaption}\item[{double}]{Angle,  }\item[{char}]{axis }\end{DoxyParamCaption})}
+
+funkcja izometrycznie transponujaca prostopadloscian wokol poczatku ukladu wspolrzednych
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Angle} & -\/ angle of the rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em Axis} & -\/ of the rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ the cuboid to be rotated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em new} & coordinates of the rotated cuboid \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_cuboid_ab04adff05fcf0693c912c2ce1588fea3}\label{class_cuboid_ab04adff05fcf0693c912c2ce1588fea3}} 
+\index{Cuboid@{Cuboid}!operator()@{operator()}}
+\index{operator()@{operator()}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \& Cuboid\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{point\+Num,  }\item[{unsigned int}]{axis }\end{DoxyParamCaption})}
+
+funktor () prostopadloscianu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & cuboid of the coordinate to be extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+Num} & -\/ number of the wanted point \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ axis of the wanted coordinate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em value} & of the coordinate of indicated values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_cuboid_a2a50a1436eb8a46d552fc6f49a1e569c}\label{class_cuboid_a2a50a1436eb8a46d552fc6f49a1e569c}} 
+\index{Cuboid@{Cuboid}!operator()@{operator()}}
+\index{operator()@{operator()}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const double \& Cuboid\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{point\+Num,  }\item[{unsigned int}]{axis }\end{DoxyParamCaption}) const}
+
+funktor () prostopadloscianu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & cuboid of the coordinate to be extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+Num} & -\/ number of the wanted point \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ axis of the wanted coordinate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em const} & value of the coordinate of indicated values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_cuboid_a0ae1039afcf2a9d668023847d1339478}\label{class_cuboid_a0ae1039afcf2a9d668023847d1339478}} 
+\index{Cuboid@{Cuboid}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cuboid}{Cuboid}} Cuboid\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix3x3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+przeciazenie operatora mnozenia dla prostopadloscianu (U\+W\+A\+GA) to dzialanie wychodzi poza matamtyczne definicje i jest stworzone wylacznie dla prostoty rachunkow w dalszych czesciach implementacji. To przeciazenie polega przemnozeniu macierzy przez kazdy z punktow prostopadloscianu (czyli przez zestaw wspolrzednych jako kazdy rzad tablicy cuboid) tak samo jak przez wektor (takie mnozenie macierzy przez wektor 8 razy)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ L\+HS operand of multiplication \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ R\+HS operand of multiplication \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em result} & of multiplication of ($\ast$this) and tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_cuboid_aa1526465352afcd1c0cd357c60ef992a}\label{class_cuboid_aa1526465352afcd1c0cd357c60ef992a}} 
+\index{Cuboid@{Cuboid}!operator+@{operator+}}
+\index{operator+@{operator+}!Cuboid@{Cuboid}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_cuboid}{Cuboid}} Cuboid\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+przeciazenie operatora dodawania dla dwoch macierzy
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ L\+HS operand of addition \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ R\+HS operand of addition \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em result} & of addition of ($\ast$this) and tmp \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/cuboid.\+hh\item 
+src/cuboid.\+cpp\end{DoxyCompactItemize}

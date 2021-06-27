@@ -1,0 +1,131 @@
+Test cases can be parameterized easily by type and indirectly by value.\hypertarget{md_external_doctest_doc_markdown_parameterized-tests_autotoc_md122}{}\doxysection{Value-\/parameterized test cases}\label{md_external_doctest_doc_markdown_parameterized-tests_autotoc_md122}
+There will be proper support for this in the future. For now there are 2 ways of doing data-\/driven testing in doctest\+:
+
+
+\begin{DoxyItemize}
+\item extracting the asserts in a helper function and calling it with a user-\/constructed array of data\+:
+
+\`{}\`{}\`{}c++ void do\+Checks(int data) \{ // do asserts with data \}
+
+T\+E\+S\+T\+\_\+\+C\+A\+SE(\char`\"{}test name\char`\"{}) \{ std\+::vector$<$int$>$ data \{1, 2, 3, 4, 5, 6\};
+
+for(auto\& i \+: data) \{ C\+A\+P\+T\+U\+R\+E(i); // log the current input data do\+Checks(i); \} \} \`{}\`{}\`{}
+
+This has several drawbacks\+:
+\begin{DoxyItemize}
+\item in case of an exception (or a {\ttfamily R\+E\+Q\+U\+I\+RE} assert failing) the entire test case ends and the checks are not done for the rest of the input data
+\item the user has to manually log the data with calls to {\ttfamily C\+A\+P\+T\+U\+R\+E()} ( or {\ttfamily I\+N\+F\+O()})
+\item more boilerplate -\/ doctest should supply primitives for generating data but currently doesnt -\/ so the user has to write his own data generation
+\end{DoxyItemize}
+\item using subcases to initialize data differently\+:
+
+\`{}\`{}\`{}c++ T\+E\+S\+T\+\_\+\+C\+A\+SE(\char`\"{}test name\char`\"{}) \{ int data; S\+U\+B\+C\+A\+SE(\char`\"{}\char`\"{}) \{ data = 1; \} S\+U\+B\+C\+A\+SE(\char`\"{}\char`\"{}) \{ data = 2; \}
+
+C\+A\+P\+T\+U\+R\+E(data);
+
+// do asserts with data \} \`{}\`{}\`{}
+
+This has the following drawbacks\+:
+\begin{DoxyItemize}
+\item doesn\textquotesingle{}t scale well -\/ it is very impractical to write such code for more than a few different inputs
+\item the user has to manually log the data with calls to {\ttfamily C\+A\+P\+T\+U\+R\+E()} (or {\ttfamily I\+N\+F\+O()})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+There is however an easy way to encapsulate this into a macro (written with C++11 for simplicity)\+:
+
+\`{}\`{}\`{}c++ \#include $<$algorithm$>$ \#include $<$vector$>$ \#include $<$string$>$
+
+\#define D\+O\+C\+T\+E\+S\+T\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+I\+Z\+E\+D\+\_\+\+D\+A\+T\+A(data, data\+\_\+array) \textbackslash{} static std\+::vector$<$std\+::string$>$ \+\_\+doctest\+\_\+subcases = \mbox{[}\&data\+\_\+array\mbox{]}() \{ \textbackslash{} std\+::vector$<$std\+::string$>$ out; \textbackslash{} while(out.\+size() != data\+\_\+array.\+size()) \textbackslash{} out.\+push\+\_\+back(std\+::string(\#data\+\_\+array \char`\"{}\mbox{[}\char`\"{}) + std\+::to\+\_\+string(out.\+size() + 1) + \char`\"{}\mbox{]}\char`\"{}); \textbackslash{} return out; \textbackslash{} \}(); \textbackslash{} int \+\_\+doctest\+\_\+subcase\+\_\+idx = 0; \textbackslash{} std\+::for\+\_\+each(data\+\_\+array.\+begin(), data\+\_\+array.\+end(), \mbox{[}\&\mbox{]}(const auto\& in) \{ \textbackslash{} D\+O\+C\+T\+E\+S\+T\+\_\+\+S\+U\+B\+C\+A\+SE(\+\_\+doctest\+\_\+subcases\mbox{[}\+\_\+doctest\+\_\+subcase\+\_\+idx++\mbox{]}.c\+\_\+str()) \{ data = in; \} \textbackslash{} \}) \`{}\`{}\`{}
+
+and now this can be used as follows\+:
+
+\`{}\`{}\`{}c++ T\+E\+S\+T\+\_\+\+C\+A\+SE(\char`\"{}test name\char`\"{}) \{ int data; std\+::list$<$int$>$ data\+\_\+array = \{1, 2, 3, 4\}; // must be iterable -\/ std\+::vector$<$$>$ would work as well
+
+D\+O\+C\+T\+E\+S\+T\+\_\+\+V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+I\+Z\+E\+D\+\_\+\+D\+A\+T\+A(data, data\+\_\+array);
+
+printf(\char`\"{}\%d\textbackslash{}n\char`\"{}, data); \} \`{}\`{}\`{}
+
+and will print the 4 numbers by re-\/entering the test case 3 times (after the first entry) -\/ just like subcases work\+:
+
+\`{}\`{}\`{} 1 2 3 4 \`{}\`{}\`{}
+
+The big limitation of this approach is that the macro cannot be used with other subcases at the same code block \{\} indentation level (will act weird) -\/ it can only be used within a subcase.
+
+The {\ttfamily static std\+::vector$<$std\+::string$>$} is necessary because the {\ttfamily S\+U\+B\+C\+A\+S\+E()} macro accepts {\ttfamily const char$\ast$} and doesn\textquotesingle{}t copy the strings but keeps the pointers internally -\/ that\textquotesingle{}s why we need to construct persistent versions of the strings. This might be changed in the future (to accept a string class) for ease of use...
+
+Stay tuned for proper value-\/parameterization in doctest!\hypertarget{md_external_doctest_doc_markdown_parameterized-tests_autotoc_md124}{}\doxysection{Templated test cases -\/ parameterized by type}\label{md_external_doctest_doc_markdown_parameterized-tests_autotoc_md124}
+Suppose you have multiple implementations of the same interface and want to make sure that all of them satisfy some common requirements. Or, you may have defined several types that are supposed to conform to the same \char`\"{}concept\char`\"{} and you want to verify it. In both cases, you want the same test logic repeated for different types.
+
+While you can write one {\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE} for each type you want to test (and you may even factor the test logic into a function template that you invoke from the test case), it\textquotesingle{}s tedious and doesn\textquotesingle{}t scale\+: if you want {\ttfamily M} tests over {\ttfamily N} types, you\textquotesingle{}ll end up writing {\ttfamily M $\ast$ N} tests.
+
+Templated tests allow you to repeat the same test logic over a list of types. You only need to write the test logic once.
+
+There are 2 ways to do it\+:
+
+
+\begin{DoxyItemize}
+\item directly pass the list of types to the templated test case
+
+\`{}\`{}\`{}c++ T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+TE(\char`\"{}signed integers stuff\char`\"{}, T, char, short, int, long long int) \{ T var = T(); --var; C\+H\+E\+CK(var == -\/1); \} \`{}\`{}\`{}
+\item define the templated test case with a specific unique name (identifier) for later instantiation
+
+\`{}\`{}\`{}c++ T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+D\+E\+F\+I\+NE(\char`\"{}signed integer stuff\char`\"{}, T, test\+\_\+id) \{ T var = T(); --var; C\+H\+E\+CK(var == -\/1); \}
+
+T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+I\+N\+V\+O\+K\+E(test\+\_\+id, char, short, int, long long int);
+
+T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+A\+P\+P\+L\+Y(test\+\_\+id, std\+::tuple$<$float, double$>$); \`{}\`{}\`{} If you are designing an interface or concept, you can define a suite of type-\/parameterized tests to verify properties that any valid implementation of the interface/concept should have. Then, the author of each implementation can just instantiate the test suite with his type to verify that it conforms to the requirements, without having to write similar tests repeatedly.
+\end{DoxyItemize}
+
+A test case named {\ttfamily signed integers stuff} instantiated for type {\ttfamily int} will yield the following test case name\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{signed integers stuff<int>}
+\end{DoxyCode}
+
+
+By default all primitive types (fundamental -\/ {\ttfamily int}, {\ttfamily bool}, {\ttfamily float}...) have stringification provided by the library. For all other types the user will have to use the {\ttfamily T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+S\+T\+R\+I\+N\+G(type)} macro -\/ like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{TYPE\_TO\_STRING(std::vector<int>);}
+\end{DoxyCode}
+
+
+The {\ttfamily T\+Y\+P\+E\+\_\+\+T\+O\+\_\+\+S\+T\+R\+I\+NG} macro has an effect only in the current source file and thus needs to be used in some header if the same type will be used in separate source files for templated test cases.
+
+Other testing frameworks use the header {\ttfamily $<$typeinfo$>$} in addition to demangling to get the string for types automatically but doctest cannot afford to include any header in it\textquotesingle{}s forward declaration part (the public one) of the header -\/ so the user has to teach the framework for each type. This is done to achieve maximal compile time performance.
+
+Some notes\+:
+
+
+\begin{DoxyItemize}
+\item types are N\+OT filtered for uniqueness -\/ the same templated test case can be instantiated multiple times for the same type -\/ preventing that is left up to the user
+\item you don\textquotesingle{}t need to provide stringification for every type as that plays a role only in the test case name -\/ the default is {\ttfamily $<$$>$} -\/ the tests will still work and be distinct
+\item if you need parameterization on more than 1 type you can package multiple types in a single one like this\+:
+
+\`{}\`{}\`{}c++ template $<$typename first, typename second$>$ struct Type\+Pair \{ typedef first A; typedef second B; \};
+
+\#define pairs \textbackslash{} Type\+Pair$<$int, char$>$, \textbackslash{} Type\+Pair$<$char, int$>$
+
+T\+E\+S\+T\+\_\+\+C\+A\+S\+E\+\_\+\+T\+E\+M\+P\+L\+A\+TE(\char`\"{}multiple types\char`\"{}, T, pairs) \{ typedef typename T\+::A T1; typedef typename T\+::B T2; // use T1 and T2 types \} \`{}\`{}\`{}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+
+\begin{DoxyItemize}
+\item Check out the \href{../../examples/all_features/templated_test_cases.cpp}{\texttt{ {\bfseries{example}}}} which shows how all of these are used.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

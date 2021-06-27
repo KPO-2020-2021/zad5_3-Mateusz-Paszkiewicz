@@ -1,0 +1,98 @@
+\hypertarget{class_spiky_hill}{}\doxysection{Spiky\+Hill Class Reference}
+\label{class_spiky_hill}\index{SpikyHill@{SpikyHill}}
+
+
+\mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} przedstawia gore z ostrym szczytem.  
+
+
+
+
+{\ttfamily \#include $<$environment.\+hh$>$}
+
+
+
+Inheritance diagram for Spiky\+Hill\+:
+% FIG 0
+
+
+Collaboration diagram for Spiky\+Hill\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} \mbox{\hyperlink{class_spiky_hill_a9b2ed252eedcb0308678848f06ecca32}{Create\+Spiky\+Hill}} (const char $\ast$, \mbox{\hyperlink{class_vector}{Vector3}} Start\+Point, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+\mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} \mbox{\hyperlink{class_spiky_hill_af89201d0861e819d4306a4f87cd327be}{operator+}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\item 
+\mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} \mbox{\hyperlink{class_spiky_hill_a433289c2f222ebe30649898acab35bd8}{operator-\/}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} przedstawia gore z ostrym szczytem. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spiky_hill_a9b2ed252eedcb0308678848f06ecca32}\label{class_spiky_hill_a9b2ed252eedcb0308678848f06ecca32}} 
+\index{SpikyHill@{SpikyHill}!CreateSpikyHill@{CreateSpikyHill}}
+\index{CreateSpikyHill@{CreateSpikyHill}!SpikyHill@{SpikyHill}}
+\doxysubsubsection{\texorpdfstring{CreateSpikyHill()}{CreateSpikyHill()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} Spiky\+Hill\+::\+Create\+Spiky\+Hill (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+\_\+\+Name,  }\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Start\+Point,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Funckja czytajaca z plikow dane dla przeszkody i tworzaca plik(!) specjalnie dla tego objektu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Start\+Point} & miejsce na ktore objekt wejdzie na mapie \\
+\hline
+\mbox{\texttt{ in}}  & {\em const} & char$\ast$ File\+\_\+\+Names nazwa pliku struktury objektu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Objekt} & utworzony przez plik \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_spiky_hill_af89201d0861e819d4306a4f87cd327be}\label{class_spiky_hill_af89201d0861e819d4306a4f87cd327be}} 
+\index{SpikyHill@{SpikyHill}!operator+@{operator+}}
+\index{operator+@{operator+}!SpikyHill@{SpikyHill}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} Spiky\+Hill\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora dodawania dla \mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & spikyhill przesuniety o wektor tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_spiky_hill_a433289c2f222ebe30649898acab35bd8}\label{class_spiky_hill_a433289c2f222ebe30649898acab35bd8}} 
+\index{SpikyHill@{SpikyHill}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!SpikyHill@{SpikyHill}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}} Spiky\+Hill\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora odejmowania dla \mbox{\hyperlink{class_spiky_hill}{Spiky\+Hill}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor odwrotny do wektora ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & spikyhill przesuniety o wektor -\/tmp \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/environment.\+hh\item 
+src/environment.\+cpp\end{DoxyCompactItemize}

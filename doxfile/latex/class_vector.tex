@@ -1,0 +1,178 @@
+\hypertarget{class_vector}{}\doxysection{Vector$<$ T, dime $>$ Class Template Reference}
+\label{class_vector}\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+
+
+Klasa wektora dowolnego rozmiaru, jego metody oraz funkcje.  
+
+
+
+
+{\ttfamily \#include $<$vector.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vector_adf5f117872c713fb8b4140025e6f5f62}{Vector}} (T\mbox{[}dime\mbox{]})
+\item 
+\mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_a57514fb153618b03dcc7cae27c7fb741}{operator+}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ v)
+\item 
+\mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_aca4f0e70564bc68c5a498965da00b181}{operator-\/}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ v)
+\item 
+\mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_a9b7746c5c49111dec064e009bf4fae3f}{operator$\ast$}} (const T \&tmp)
+\item 
+\mbox{\hyperlink{class_vector}{Vector}} \mbox{\hyperlink{class_vector_a37aa32cd1b5395a8d6964149e8ea01e8}{operator/}} (const T \&tmp)
+\item 
+const T \& \mbox{\hyperlink{class_vector_a1e35b4a2d674697d057684ef735fec2f}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index) const
+\item 
+T \& \mbox{\hyperlink{class_vector_aa9ba17c033dc0c237443d0cff2bd688e}{operator\mbox{[}$\,$\mbox{]}}} (unsigned int index)
+\item 
+bool \mbox{\hyperlink{class_vector_abd10127670a9c67c013c4631eed182fa}{operator==}} (const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, unsigned int dime$>$\newline
+class Vector$<$ T, dime $>$}
+
+Klasa wektora dowolnego rozmiaru, jego metody oraz funkcje. 
+
+Klasa zawiera definicje, metody i funkcje wektora potrzebne do zrealizowania obrotu 3D za pomoca lacza do G\+N\+Uplota 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vector_adf5f117872c713fb8b4140025e6f5f62}\label{class_vector_adf5f117872c713fb8b4140025e6f5f62}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::\mbox{\hyperlink{class_vector}{Vector}} (\begin{DoxyParamCaption}\item[{T}]{tmp\mbox{[}dime\mbox{]} }\end{DoxyParamCaption})}
+
+Konstruktor parametryczny klasy \mbox{\hyperlink{class_vector}{Vector}}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & tmp -\/ Jednowymiarowa tablica typu double. \textbackslash{}retvalue -\/ Tablice wypelniona wartosciami podanymi w argumencie. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector_a9b7746c5c49111dec064e009bf4fae3f}\label{class_vector_a9b7746c5c49111dec064e009bf4fae3f}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const T \&}]{tmp }\end{DoxyParamCaption})}
+
+Realizuje mnozenie wektora przez liczbe zmiennoprzecinkowa.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & this -\/ pierwszy skladnik mnozenia (wektor), \\
+\hline
+\mbox{\texttt{ in}}  & {\em -\/} & v -\/ drugi skladnik mnozenia (liczba typu typename). \textbackslash{}retvalue -\/ Iloraz dwoch skladnikow przekazanych jako wskaznik na parametr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a57514fb153618b03dcc7cae27c7fb741}\label{class_vector_a57514fb153618b03dcc7cae27c7fb741}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$}]{v }\end{DoxyParamCaption})}
+
+Realizuje dodawanie dwoch wektorow.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & this -\/ pierwszy skladnik dodawania, \\
+\hline
+\mbox{\texttt{ in}}  & {\em -\/} & v -\/ drugi skladnik dodawania. \textbackslash{}retvalue -\/ Sume dwoch skladnikow przekazanych jako wskaznik na parametr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_aca4f0e70564bc68c5a498965da00b181}\label{class_vector_aca4f0e70564bc68c5a498965da00b181}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$}]{v }\end{DoxyParamCaption})}
+
+Realizuje odejmowanie dwoch wektorow.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & this -\/ pierwszy skladnik odejmowania, \\
+\hline
+\mbox{\texttt{ in}}  & {\em -\/} & v -\/ drugi skladnik odejmowania. \textbackslash{}retvalue -\/ Roznice dwoch skladnikow przekazanych jako wskaznik na parametr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a37aa32cd1b5395a8d6964149e8ea01e8}\label{class_vector_a37aa32cd1b5395a8d6964149e8ea01e8}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+\mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$ \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T \&}]{tmp }\end{DoxyParamCaption})}
+
+Realizuje dzielenie dwoch wektorow.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & this -\/ licznik dzielenia, \\
+\hline
+\mbox{\texttt{ in}}  & {\em -\/} & v -\/ mianownik dzielenia. \textbackslash{}retvalue -\/ Iloraz dwoch skladnikow przekazanych jako wskaznik na parametr. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_abd10127670a9c67c013c4631eed182fa}\label{class_vector_abd10127670a9c67c013c4631eed182fa}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+bool \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$}]{v }\end{DoxyParamCaption}) const}
+
+przeciazenie operatora == dla wektora
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ one of the vectors to be compared \\
+\hline
+\mbox{\texttt{ in}}  & {\em v} & -\/ second vector to be compared \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ if the compared vectors are equal \\
+\hline
+{\em false} & -\/ if not \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_vector_aa9ba17c033dc0c237443d0cff2bd688e}\label{class_vector_aa9ba17c033dc0c237443d0cff2bd688e}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+T \& \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+Funktor wektora.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & index wektora. \textbackslash{}retvalue -\/ Wartosc wektora w danym miejscu tablicy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vector_a1e35b4a2d674697d057684ef735fec2f}\label{class_vector_a1e35b4a2d674697d057684ef735fec2f}} 
+\index{Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector$<$ T, dime $>$@{Vector$<$ T, dime $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , unsigned int dime$>$ \\
+const T \& \mbox{\hyperlink{class_vector}{Vector}}$<$ T, dime $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+Funktor wektora.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & index -\/ index wektora. \textbackslash{}retvalue -\/ Wartosc wektora w danym miejscu tablicy jako stala. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/vector.\+hh\end{DoxyCompactItemize}

@@ -1,0 +1,189 @@
+{\bfseries{doctest}} is designed to \char`\"{}just work\char`\"{} as much as possible. It also allows configuring how it is built with a set of identifiers.
+
+The identifiers should be defined before the inclusion of the framework header.
+
+Defining something {\ttfamily globally} means for every source file of the binary (executable / shared object).
+
+
+\begin{DoxyItemize}
+\item \href{\#doctest_config_implement_with_main}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+\_\+\+W\+I\+T\+H\+\_\+\+M\+A\+IN}$\ast$$\ast$}}
+\item \href{\#doctest_config_implement}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+NT}$\ast$$\ast$}}
+\item \href{\#doctest_config_disable}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+D\+I\+S\+A\+B\+LE}$\ast$$\ast$}}
+\item \href{\#doctest_config_implementation_in_dll}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+I\+N\+\_\+\+D\+LL}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_short_macro_names}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+S\+H\+O\+R\+T\+\_\+\+M\+A\+C\+R\+O\+\_\+\+N\+A\+M\+ES}$\ast$$\ast$}}
+\item \href{\#doctest_config_treat_char_star_as_string}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+R\+E\+A\+T\+\_\+\+C\+H\+A\+R\+\_\+\+S\+T\+A\+R\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+NG}$\ast$$\ast$}}
+\item \href{\#doctest_config_super_fast_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+U\+P\+E\+R\+\_\+\+F\+A\+S\+T\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}}
+\item \href{\#doctest_config_use_std_headers}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+T\+D\+\_\+\+H\+E\+A\+D\+E\+RS}$\ast$$\ast$}}
+\item \href{\#doctest_config_void_cast_expressions}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+V\+O\+I\+D\+\_\+\+C\+A\+S\+T\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+NS}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_comparison_warning_suppression}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+I\+ON}$\ast$$\ast$}}
+\item \href{\#doctest_config_options_prefix}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+P\+R\+E\+F\+IX}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_unprefixed_options}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+U\+N\+P\+R\+E\+F\+I\+X\+E\+D\+\_\+\+O\+P\+T\+I\+O\+NS}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_try_catch_in_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+T\+R\+Y\+\_\+\+C\+A\+T\+C\+H\+\_\+\+I\+N\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_exceptions}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_exceptions_but_with_all_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+T\+\_\+\+W\+I\+T\+H\+\_\+\+A\+L\+L\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}}
+\item \href{\#doctest_config_assertion_parameters_by_value}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+A\+S\+S\+E\+R\+T\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+B\+Y\+\_\+\+V\+A\+L\+UE}$\ast$$\ast$}}
+\item \href{\#doctest_config_colors_none}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+N\+O\+NE}$\ast$$\ast$}}
+\item \href{\#doctest_config_colors_windows}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+W\+I\+N\+D\+O\+WS}$\ast$$\ast$}}
+\item \href{\#doctest_config_colors_ansi}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+A\+N\+SI}$\ast$$\ast$}}
+\item \href{\#doctest_config_windows_seh}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+S\+EH}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_windows_seh}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+S\+EH}$\ast$$\ast$}}
+\item \href{\#doctest_config_posix_signals}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+S\+I\+X\+\_\+\+S\+I\+G\+N\+A\+LS}$\ast$$\ast$}}
+\item \href{\#doctest_config_no_posix_signals}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+P\+O\+S\+I\+X\+\_\+\+S\+I\+G\+N\+A\+LS}$\ast$$\ast$}}
+\item \href{\#doctest_config_include_type_traits}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+R\+A\+I\+TS}$\ast$$\ast$}}
+\end{DoxyItemize}
+
+For most people the only configuration needed is telling {\bfseries{doctest}} which source file should host all the implementation code\+:\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md69}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+\_\+\+W\+I\+T\+H\+\_\+\+M\+A\+I\+N$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{\#define DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}
+\DoxyCodeLine{\#include "doctest.h"}
+\end{DoxyCode}
+
+
+This should be defined only in the source file where the library is implemented. It also creates a {\ttfamily main()} entry point.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md70}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md70}
+If the client wants to $\ast$$\ast$supply the \`{}\`{}\`{}main()\`{}\`{}\`{} function$\ast$$\ast$ (either to set an option with some value from the code or to integrate the framework into his existing project codebase) this identifier should be used.
+
+This should be defined only in the source file where the library is implemented.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md71}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+D\+I\+S\+A\+B\+L\+E$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md71}
+One of the most most important configuration option -\/ everything testing-\/related is removed from the binary -\/ including most of the framework implementation and every test case written anywhere! This is one of the most unique features of {\bfseries{doctest}}.
+
+This should be defined globally.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md72}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+I\+N\+\_\+\+D\+L\+L$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md72}
+This will affect the public interface of doctest -\/ all necessary forward declarations for writing tests will be turned into imported symbols. That way the test runner doesn\textquotesingle{}t have to be implemented in the binary (executable / shared object) and can be reused from another binary where it is built and exported.
+
+To export the test runner from a binary simply use \href{\#doctest_config_implementation_in_dll}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+I\+N\+\_\+\+D\+LL}$\ast$$\ast$}} together with \href{\#doctest_config_implement}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+NT}$\ast$$\ast$}} (or \href{\#doctest_config_implement_with_main}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+\_\+\+W\+I\+T\+H\+\_\+\+M\+A\+IN}$\ast$$\ast$}} but then the other binaries will have to link to the executable) in whatever source file the test runner gets implemented into. Note that this identifier should not be defined in the other source files of the binary which exports the doctest test runner -\/ or there will be linker conflicts -\/ having the same symbols as both imported and exported within the same binary.
+
+Checkout the \href{../../examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{example}}}} -\/ it shows how to have the test runner implemented in a dll (and there are even tests in a plugin which is dynamically loaded).
+
+This should be defined globally in binaries that import the symbols.
+
+This should be defined only in the source file where the library is implemented for binaries that export the test runner.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md73}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+S\+H\+O\+R\+T\+\_\+\+M\+A\+C\+R\+O\+\_\+\+N\+A\+M\+E\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md73}
+This will remove all macros from {\bfseries{doctest}} that don\textquotesingle{}t have the $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+}$\ast$$\ast$ prefix -\/ like $\ast$$\ast${\ttfamily C\+H\+E\+CK}$\ast$$\ast$, $\ast$$\ast${\ttfamily T\+E\+S\+T\+\_\+\+C\+A\+SE}$\ast$$\ast$ and $\ast$$\ast${\ttfamily S\+U\+B\+C\+A\+SE}$\ast$$\ast$. Then only the full macro names will be available -\/ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+H\+E\+CK}$\ast$$\ast$, $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+T\+E\+S\+T\+\_\+\+C\+A\+SE}$\ast$$\ast$ and $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+S\+U\+B\+C\+A\+SE}$\ast$$\ast$. The user is free to make his own short versions of these macros -\/ \href{../../examples/all_features/alternative_macros.cpp}{\texttt{ {\bfseries{example}}}}.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md74}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+R\+E\+A\+T\+\_\+\+C\+H\+A\+R\+\_\+\+S\+T\+A\+R\+\_\+\+A\+S\+\_\+\+S\+T\+R\+I\+N\+G$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md74}
+By default {\ttfamily char$\ast$} is being treated as a pointer. With this option comparing {\ttfamily char$\ast$} pointers will switch to using {\ttfamily strcmp()} for comparisons and when stringified the string will be printed instead of the pointer value.
+
+This should be defined globally.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md75}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+U\+P\+E\+R\+\_\+\+F\+A\+S\+T\+\_\+\+A\+S\+S\+E\+R\+T\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md75}
+This config option makes the assert macros (except for those dealing with exceptions) compile \href{benchmarks.md\#cost-of-an-assertion-macro}{\texttt{ {\bfseries{much faster}}}}! (31-\/91\% -\/ depending on the type -\/ \href{assertions.md\#expression-decomposing-asserts}{\texttt{ {\bfseries{normal}}}} or \href{assertions.md\#binary-and-unary-asserts}{\texttt{ {\bfseries{binary}}}})
+
+Each assert is turned into a single function call -\/ the only downside of this is\+: if an assert fails and a debugger is attached -\/ when it breaks it will be in an internal function -\/ the user will have to go 1 level up in the callstack to see the actual assert.
+
+It also implies \href{\#doctest_config_no_try_catch_in_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+T\+R\+Y\+\_\+\+C\+A\+T\+C\+H\+\_\+\+I\+N\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}} (so exceptions thrown during the evaluation of an assert are not caught by the assert itself but by the testing framework -\/ meaning that the test case is immediately aborted).
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md76}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+U\+S\+E\+\_\+\+S\+T\+D\+\_\+\+H\+E\+A\+D\+E\+R\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md76}
+The library by default provides a forward declaration of {\ttfamily std\+::ostream} in order to support the {\ttfamily operator$<$$<$} $\ast$$\ast$stringification$\ast$$\ast$ mechanism (also {\ttfamily std\+::tuple$<$$>$} and {\ttfamily std\+::nullptr\+\_\+t}). This is forbidden by the standard (even though it works everywhere on all tested compilers). However if the user wishes to be 100\% standards compliant -\/ then this configuration option can be used to force the inclusion of the relevant standard headers.
+
+Also it is possible that some S\+TL implementation of a compiler with niche usage defines them differently -\/ then there will be compilation errors in S\+TL headers and using this option should fix the problem. ~\newline
+
+
+This should be defined globally.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md77}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+V\+O\+I\+D\+\_\+\+C\+A\+S\+T\+\_\+\+E\+X\+P\+R\+E\+S\+S\+I\+O\+N\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md77}
+This affects the \href{assertions.md\#exceptions}{\texttt{ asserts dealing with exceptions}} -\/ the expression is cast to void to avoid problems such as when functions with the {\ttfamily \mbox{[}\mbox{[}nodiscard\mbox{]}\mbox{]}} attribute are used but their result isn\textquotesingle{}t checked.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md78}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+N\+\_\+\+W\+A\+R\+N\+I\+N\+G\+\_\+\+S\+U\+P\+P\+R\+E\+S\+S\+I\+O\+N$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md78}
+By default the library suppresses warnings about comparing signed and unsigned types, etc.
+
+
+\begin{DoxyItemize}
+\item g++/clang {\ttfamily -\/Wsign-\/conversion}
+\item g++/clang {\ttfamily -\/Wsign-\/compare}
+\item msvc {\ttfamily C4389} \textquotesingle{}operator\textquotesingle{} \+: signed/unsigned mismatch
+\item msvc {\ttfamily C4018} \textquotesingle{}expression\textquotesingle{} \+: signed/unsigned mismatch
+\end{DoxyItemize}
+
+You can checkout \href{https://github.com/onqtam/doctest/issues/16\#issuecomment-246803303}{\texttt{ {\bfseries{this}}}} issue to better understand why I suppress these warnings by default.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md79}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+O\+P\+T\+I\+O\+N\+S\+\_\+\+P\+R\+E\+F\+I\+X$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md79}
+Defining this as a string will change the prefix of the $\ast$$\ast$command line$\ast$$\ast$ options to use the given prefix instead of the default {\ttfamily dt-\/} prefix. This can be useful for integrating the testing framework into a client codebase, where a command option prefix like {\ttfamily selftest-\/} might be more clear to users.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md80}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+U\+N\+P\+R\+E\+F\+I\+X\+E\+D\+\_\+\+O\+P\+T\+I\+O\+N\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md80}
+This will disable the short versions of the $\ast$$\ast$command line$\ast$$\ast$ options and only the versions with {\ttfamily -\/-\/dt-\/} prefix will be parsed by {\bfseries{doctest}} -\/ this is possible for easy interoperability with client command line option handling when the testing framework is integrated within a client codebase -\/ so there are no clashes and so that the user can exclude everything starting with {\ttfamily -\/-\/dt-\/} from their option parsing.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md81}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+T\+R\+Y\+\_\+\+C\+A\+T\+C\+H\+\_\+\+I\+N\+\_\+\+A\+S\+S\+E\+R\+T\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md81}
+This will remove all {\ttfamily try} / {\ttfamily catch} sections from\+:
+
+
+\begin{DoxyItemize}
+\item the \href{assertions.md\#expression-decomposing-asserts}{\texttt{ normal asserts}}
+\item the \href{assertions.md\#binary-and-unary-asserts}{\texttt{ binary and unary asserts}}
+\end{DoxyItemize}
+
+so exceptions thrown while evaluating the expression in an assert will terminate the current test case.
+
+This can be used for some mild compile time savings but for greater impact look into \href{configuration.md\#doctest_config_super_fast_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+S\+U\+P\+E\+R\+\_\+\+F\+A\+S\+T\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}}.
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md82}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+N\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md82}
+This will remove everything that uses exceptions from the framework -\/ it is also auto detectable if exceptions are disabled for compilers (like with {\ttfamily -\/fno-\/exceptions} for G\+C\+C/\+Clang).
+
+What gets changed\+:
+
+
+\begin{DoxyItemize}
+\item asserts that evaluate the expression in a {\ttfamily try} / {\ttfamily catch} section no longer evaluate in such a context
+\item {\ttfamily R\+E\+Q\+U\+I\+RE} macros are gone (undefined)
+\item \href{assertions.md\#exceptions}{\texttt{ exception macros}} are gone (undefined)
+\item the {\ttfamily abort-\/after} option won\textquotesingle{}t be fully working because an exception is used to terminate test cases
+\end{DoxyItemize}
+
+The {\ttfamily R\+E\+Q\+U\+I\+RE} family of asserts uses exceptions to terminate the current test case when they fail. An exception is used instead of a simple {\ttfamily return;} because asserts can be used not only in a test case but also in functions called by a test case.
+
+Also some of the \href{logging.md\#messages-which-can-optionally-fail-test-cases}{\texttt{ {\bfseries{logging macros}}}} which act like a {\ttfamily R\+E\+Q\+U\+I\+RE} assert (terminating the test case) -\/ like {\ttfamily F\+A\+I\+L()} -\/ start to work differently -\/ like a {\ttfamily F\+A\+I\+L\+\_\+\+C\+H\+E\+C\+K()}.
+
+\href{\#doctest_config_no_exceptions}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}$\ast$$\ast$}} implies \href{\#doctest_config_no_try_catch_in_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+T\+R\+Y\+\_\+\+C\+A\+T\+C\+H\+\_\+\+I\+N\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}}
+
+If you wish to use asserts that deal with exceptions and only sometimes build without exceptions -\/ check the \href{\#doctest_config_no_exceptions_but_with_all_asserts}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+T\+\_\+\+W\+I\+T\+H\+\_\+\+A\+L\+L\+\_\+\+A\+S\+S\+E\+R\+TS}$\ast$$\ast$}} config option.
+
+This should be defined globally.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md83}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+N\+S\+\_\+\+B\+U\+T\+\_\+\+W\+I\+T\+H\+\_\+\+A\+L\+L\+\_\+\+A\+S\+S\+E\+R\+T\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md83}
+When building with no exceptions (see \href{\#doctest_config_no_exceptions}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}$\ast$$\ast$}}) {\ttfamily R\+E\+Q\+U\+I\+RE} asserts and the ones about dealing with exceptions are gone.
+
+If however you want your code to use these assertions and only sometimes build without exceptions -\/ then using this config will be of help. The effects of using it are the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily R\+E\+Q\+U\+I\+RE} asserts are not gone -\/ but they act like {\ttfamily C\+H\+E\+CK} asserts -\/ when one of them fails the whole test case will be marked as failed but will not be exited immediately
+\item the \href{assertions.md\#exceptions}{\texttt{ asserts for dealing with exceptions}} are turned into a no-\/op (instead of being totally undefined)
+\end{DoxyItemize}
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md84}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+A\+S\+S\+E\+R\+T\+I\+O\+N\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+S\+\_\+\+B\+Y\+\_\+\+V\+A\+L\+U\+E$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md84}
+This option forces all doctest asserts to copy by value the expressions they are given instead of binding them to const references. This might be useful to avoid O\+D\+R-\/usage of static constants (which might lead to linker errors with g++/clang)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{template<typename T> struct type\_traits \{ static const bool value = false; \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{// unless DOCTEST\_CONFIG\_ASSERTION\_PARAMETERS\_BY\_VALUE is defined the following assertion}
+\DoxyCodeLine{// will lead to a linker error if type\_traits<int>::value isn't defined in a translation unit}
+\DoxyCodeLine{CHECK(type\_traits<int>::value == false);}
+\end{DoxyCode}
+
+
+This can be defined both globally and in specific source files only.\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md85}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+N\+O\+N\+E$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md85}
+This will remove support for colors in the console output of the framework.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md86}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md86}
+This will force the support for colors in the console output to use the Windows A\+P\+Is and headers.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md87}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+C\+O\+L\+O\+R\+S\+\_\+\+A\+N\+S\+I$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md87}
+This will force the support for colors in the console output to use A\+N\+SI escape codes.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md88}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+S\+E\+H$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md88}
+This will enable S\+EH handling on Windows. Currently enabled only when compiled with M\+S\+VC, because some versions of Min\+GW do not have the necessary Win32 A\+PI support. The user may choose to enable this explicitly -\/ it is known to work with the Min\+G\+W-\/w64 project.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md89}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+S\+E\+H$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md89}
+This can be used to disable $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+S\+EH}$\ast$$\ast$ when it is auto-\/selected by the library.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md90}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+S\+I\+X\+\_\+\+S\+I\+G\+N\+A\+L\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md90}
+This will enable the use of signals under U\+N\+IX for handling crashes. On by default.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md91}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+N\+O\+\_\+\+P\+O\+S\+I\+X\+\_\+\+S\+I\+G\+N\+A\+L\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md91}
+This can be used to disable $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+O\+S\+I\+X\+\_\+\+S\+I\+G\+N\+A\+LS}$\ast$$\ast$ when it is auto-\/selected by the library.
+
+This should be defined only in the source file where the library is implemented (it\textquotesingle{}s relevant only there).\hypertarget{md_external_doctest_doc_markdown_configuration_autotoc_md92}{}\doxysubsection{$\ast$$\ast$$<$tt$>$\+D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+R\+A\+I\+T\+S$<$/tt$>$$\ast$$\ast$}\label{md_external_doctest_doc_markdown_configuration_autotoc_md92}
+This can be used to include the {\ttfamily $<$type\+\_\+traits$>$} C++11 header. That in turn will enable the ability for the {\ttfamily Approx} helper to be used with strong typedefs of {\ttfamily double} -\/ check \href{https://github.com/onqtam/doctest/issues/62}{\texttt{ this}} or \href{https://github.com/onqtam/doctest/issues/85}{\texttt{ this}} issue for more details on that.
+
+This can be defined both globally and in specific source files only.
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

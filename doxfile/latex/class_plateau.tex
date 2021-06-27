@@ -1,0 +1,98 @@
+\hypertarget{class_plateau}{}\doxysection{Plateau Class Reference}
+\label{class_plateau}\index{Plateau@{Plateau}}
+
+
+\mbox{\hyperlink{class_plateau}{Plateau}} przedstawia plaskowyz.  
+
+
+
+
+{\ttfamily \#include $<$environment.\+hh$>$}
+
+
+
+Inheritance diagram for Plateau\+:
+% FIG 0
+
+
+Collaboration diagram for Plateau\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plateau}{Plateau}} \mbox{\hyperlink{class_plateau_a91875185f858f0bdd394754634ac624c}{Create\+Plateau}} (const char $\ast$, \mbox{\hyperlink{class_vector}{Vector3}} Start\+Point, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+\mbox{\hyperlink{class_plateau}{Plateau}} \mbox{\hyperlink{class_plateau_a82b4130df4df7521d458109c929ade17}{operator+}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\item 
+\mbox{\hyperlink{class_plateau}{Plateau}} \mbox{\hyperlink{class_plateau_ab4c157f5492b7b527960873deec19b4f}{operator-\/}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_plateau}{Plateau}} przedstawia plaskowyz. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plateau_a91875185f858f0bdd394754634ac624c}\label{class_plateau_a91875185f858f0bdd394754634ac624c}} 
+\index{Plateau@{Plateau}!CreatePlateau@{CreatePlateau}}
+\index{CreatePlateau@{CreatePlateau}!Plateau@{Plateau}}
+\doxysubsubsection{\texorpdfstring{CreatePlateau()}{CreatePlateau()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plateau}{Plateau}} Plateau\+::\+Create\+Plateau (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+\_\+\+Name,  }\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Start\+Point,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Funckja czytajaca z plikow dane dla przeszkody i tworzaca plik(!) specjalnie dla tego objektu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Start\+Point} & miejsce na ktore objekt wejdzie na mapie \\
+\hline
+\mbox{\texttt{ in}}  & {\em const} & char$\ast$ File\+\_\+\+Names nazwa pliku struktury objektu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Objekt} & utworzony przez plik \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_plateau_a82b4130df4df7521d458109c929ade17}\label{class_plateau_a82b4130df4df7521d458109c929ade17}} 
+\index{Plateau@{Plateau}!operator+@{operator+}}
+\index{operator+@{operator+}!Plateau@{Plateau}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plateau}{Plateau}} Plateau\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora dodawania dla \mbox{\hyperlink{class_plateau}{Plateau}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & \mbox{\hyperlink{class_plateau}{Plateau}} przesuniety o wektor tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_plateau_ab4c157f5492b7b527960873deec19b4f}\label{class_plateau_ab4c157f5492b7b527960873deec19b4f}} 
+\index{Plateau@{Plateau}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Plateau@{Plateau}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_plateau}{Plateau}} Plateau\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora odejmowania dla \mbox{\hyperlink{class_plateau}{Plateau}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor odwrotny do wektora ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & plateau przesuniety o wektor -\/tmp \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/environment.\+hh\item 
+src/environment.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,192 @@
+\hypertarget{class_prism}{}\doxysection{Prism Class Reference}
+\label{class_prism}\index{Prism@{Prism}}
+
+
+Inheritance diagram for Prism\+:
+% FIG 0
+
+
+Collaboration diagram for Prism\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_prism_aa84930a585c7817f74a14d95ea74cb5a}{Prism}} ()
+\item 
+\mbox{\hyperlink{class_prism_adef60363aba9c11b4e3374c1ec76bcc9}{Prism}} (double\mbox{[}12\mbox{]}\mbox{[}3\mbox{]})
+\item 
+\mbox{\hyperlink{class_prism}{Prism}} \mbox{\hyperlink{class_prism_a64284ee37615fd82de12e567d2c03a68}{operator$\ast$}} (\mbox{\hyperlink{class_matrix}{Matrix3x3}} \&)
+\item 
+\mbox{\hyperlink{class_prism}{Prism}} \mbox{\hyperlink{class_prism_abe56c8f67bb093a99bb9e58a220d0726}{operator+}} (\mbox{\hyperlink{class_vector}{Vector3}} \&)
+\item 
+\mbox{\hyperlink{class_prism}{Prism}} \mbox{\hyperlink{class_prism_ac9499aac52f0446c7f60eb0874c1c347}{operator-\/}} (\mbox{\hyperlink{class_vector}{Vector3}} \&)
+\item 
+const double \& \mbox{\hyperlink{class_prism_ad0da48a2e307ae3f49b14eafc9348501}{operator()}} (unsigned int, unsigned int) const
+\item 
+double \& \mbox{\hyperlink{class_prism_afad33a57adcf02f8249e94dc4a545a57}{operator()}} (unsigned int, unsigned int)
+\item 
+\mbox{\Hypertarget{class_prism_a12c2e6d8d82af9069d570d6ed94e1029}\label{class_prism_a12c2e6d8d82af9069d570d6ed94e1029}} 
+\mbox{\hyperlink{class_prism}{Prism}} {\bfseries Angle\+Trans} (double Angle, char axis)
+\item 
+\mbox{\Hypertarget{class_prism_ab5426da7537ce90f65d2786858a2fbee}\label{class_prism_ab5426da7537ce90f65d2786858a2fbee}} 
+\mbox{\hyperlink{class_vector}{Vector3}} {\bfseries Get\+Position} ()
+\item 
+\mbox{\Hypertarget{class_prism_a8a3d83838f3aac1b299e98db60ff63a1}\label{class_prism_a8a3d83838f3aac1b299e98db60ff63a1}} 
+\mbox{\hyperlink{class_vector}{Vector3}} {\bfseries operator()} (unsigned int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_prism_a778fdaab85c96e71f17ecd414c479dfa}\label{class_prism_a778fdaab85c96e71f17ecd414c479dfa}} 
+double {\bfseries point} \mbox{[}12\mbox{]}\mbox{[}3\mbox{]}
+\item 
+\mbox{\Hypertarget{class_prism_a8e9e879a66fafd4a148e59d07f4c8169}\label{class_prism_a8e9e879a66fafd4a148e59d07f4c8169}} 
+\mbox{\hyperlink{class_vector}{Vector3}} {\bfseries Position}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_prism_aa84930a585c7817f74a14d95ea74cb5a}\label{class_prism_aa84930a585c7817f74a14d95ea74cb5a}} 
+\index{Prism@{Prism}!Prism@{Prism}}
+\index{Prism@{Prism}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{Prism()}{Prism()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Prism\+::\+Prism (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Konstruktor objektu klasy \mbox{\hyperlink{class_prism}{Prism}} (bezparametryczny)
+
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{class_prism}{Prism}}} & Class object of coords 0 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_prism_adef60363aba9c11b4e3374c1ec76bcc9}\label{class_prism_adef60363aba9c11b4e3374c1ec76bcc9}} 
+\index{Prism@{Prism}!Prism@{Prism}}
+\index{Prism@{Prism}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{Prism()}{Prism()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Prism\+::\+Prism (\begin{DoxyParamCaption}\item[{double}]{tmp\mbox{[}12\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+Konstruktor objektu klasy \mbox{\hyperlink{class_prism}{Prism}} (parametryczny)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp\mbox{[}12\mbox{]}\mbox{[}3\mbox{]}} & -\/ array of coords where the row is the point number and column is the axis \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \mbox{\hyperlink{class_prism}{Prism}}} & Class object of coords 0 \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_prism_afad33a57adcf02f8249e94dc4a545a57}\label{class_prism_afad33a57adcf02f8249e94dc4a545a57}} 
+\index{Prism@{Prism}!operator()@{operator()}}
+\index{operator()@{operator()}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double \& Prism\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{point\+Num,  }\item[{unsigned int}]{axis }\end{DoxyParamCaption})}
+
+funktor () graniastoslupa
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & \mbox{\hyperlink{class_prism}{Prism}} of the coordinate to be extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+Num} & -\/ number of the wanted point \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ axis of the wanted coordinate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em value} & of the coordinate of indicated values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_prism_ad0da48a2e307ae3f49b14eafc9348501}\label{class_prism_ad0da48a2e307ae3f49b14eafc9348501}} 
+\index{Prism@{Prism}!operator()@{operator()}}
+\index{operator()@{operator()}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const double \& Prism\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{point\+Num,  }\item[{unsigned int}]{axis }\end{DoxyParamCaption}) const}
+
+funktor () graniastoslupa
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & \mbox{\hyperlink{class_prism}{Prism}} of the coordinate to be extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+Num} & -\/ number of the wanted point \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ axis of the wanted coordinate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em const} & value of the coordinate of indicated values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_prism_a64284ee37615fd82de12e567d2c03a68}\label{class_prism_a64284ee37615fd82de12e567d2c03a68}} 
+\index{Prism@{Prism}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prism}{Prism}} Prism\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix}{Matrix3x3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+przeciazenie operatora mnozenia dla graniastoslupa (U\+W\+A\+GA) to dzialanie wychodzi poza matamtyczne definicje i jest stworzone wylacznie dla prostoty rachunkow w dalszych czesciach implementacji. To przeciazenie polega przemnozeniu macierzy przez kazdy z punktow graniastoslupa (czyli przez zestaw wspolrzednych jako kazdy rzad tablicy \mbox{\hyperlink{class_prism}{Prism}}) tak samo jak przez wektor (takie mnozenie macierzy przez wektor 12 razy)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ L\+HS operand of multiplication \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ R\+HS operand of multiplication \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em result} & of multiplication of ($\ast$this) and tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_prism_abe56c8f67bb093a99bb9e58a220d0726}\label{class_prism_abe56c8f67bb093a99bb9e58a220d0726}} 
+\index{Prism@{Prism}!operator+@{operator+}}
+\index{operator+@{operator+}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prism}{Prism}} Prism\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+przeciazenie operatora dodawania dla dwoch macierzy
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ L\+HS operand of addition \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ R\+HS operand of addition \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em result} & of addition of ($\ast$this) and tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_prism_ac9499aac52f0446c7f60eb0874c1c347}\label{class_prism_ac9499aac52f0446c7f60eb0874c1c347}} 
+\index{Prism@{Prism}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Prism@{Prism}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_prism}{Prism}} Prism\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+przeciazenie operatora odejmowania dla graniastoslupa i wektora
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & -\/ L\+HS operand of subtraction \\
+\hline
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ R\+HS operand of subtraction \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em result} & of addition of ($\ast$this) and tmp (of type prism) \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/prism.\+hh\item 
+src/prism.\+cpp\end{DoxyCompactItemize}

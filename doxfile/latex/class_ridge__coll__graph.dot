@@ -1,0 +1,14 @@
+digraph "Ridge"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Ridge",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Plateau przedstawia gran."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="SceneObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene_object.html",tooltip="Klasa SceneObject definiuje ogolnie pojety objekt na scenie za pomoca zestawu danych w postaci Cuboid..."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Structure" ];
+  Node3 [label="Cuboid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cuboid.html",tooltip="Klasa prostopadloscianu w postaci tablicy dwuwymiarowej oraz jej metody."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Position" ];
+  Node4 [label="Vector\< double, 3 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Bottom" ];
+}

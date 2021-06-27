@@ -1,0 +1,71 @@
+\hypertarget{class_scene_object}{}\doxysection{Scene\+Object Class Reference}
+\label{class_scene_object}\index{SceneObject@{SceneObject}}
+
+
+Klasa \mbox{\hyperlink{class_scene_object}{Scene\+Object}} definiuje ogolnie pojety objekt na scenie za pomoca zestawu danych w postaci \mbox{\hyperlink{class_cuboid}{Cuboid}}.  
+
+
+
+
+{\ttfamily \#include $<$environment.\+hh$>$}
+
+
+
+Inheritance diagram for Scene\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Scene\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_scene_object_a08811f35be9a05741d02767662da68f5}{Get\+Diameter}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scene_object_a51ae4cc6e722da2c2eefe67e6b87c1e1}\label{class_scene_object_a51ae4cc6e722da2c2eefe67e6b87c1e1}} 
+class {\bfseries Spiky\+Hill}
+\item 
+\mbox{\Hypertarget{class_scene_object_a1e864baae10efddb59490b032ba7e0d5}\label{class_scene_object_a1e864baae10efddb59490b032ba7e0d5}} 
+class {\bfseries Plateau}
+\item 
+\mbox{\Hypertarget{class_scene_object_a76606c6e2bd9ef048681943f82805d39}\label{class_scene_object_a76606c6e2bd9ef048681943f82805d39}} 
+class {\bfseries Ridge}
+\item 
+\mbox{\Hypertarget{class_scene_object_a29bc7acc1b7107fb8647413fbbca6b7d}\label{class_scene_object_a29bc7acc1b7107fb8647413fbbca6b7d}} 
+class {\bfseries Drone}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa \mbox{\hyperlink{class_scene_object}{Scene\+Object}} definiuje ogolnie pojety objekt na scenie za pomoca zestawu danych w postaci \mbox{\hyperlink{class_cuboid}{Cuboid}}. 
+
+Klasa ta uzywa klasy cuboid z zapetlonymi punktami aby odwzorowac konkretna przeszkode na scenie. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_object_a08811f35be9a05741d02767662da68f5}\label{class_scene_object_a08811f35be9a05741d02767662da68f5}} 
+\index{SceneObject@{SceneObject}!GetDiameter@{GetDiameter}}
+\index{GetDiameter@{GetDiameter}!SceneObject@{SceneObject}}
+\doxysubsubsection{\texorpdfstring{GetDiameter()}{GetDiameter()}}
+{\footnotesize\ttfamily double Scene\+Object\+::\+Get\+Diameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Obliczenie promienia zajmowanego przez objekt sceny okregu w ktory nic nie powinno wejsc
+
+
+\begin{DoxyRetVals}{Return values}
+{\em dlugosc} & promienia \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented in \mbox{\hyperlink{class_drone_ae28daf4b302d8b9b77303b46a56d3c20}{Drone}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/environment.\+hh\item 
+include/scene.\+hh\item 
+src/environment.\+cpp\end{DoxyCompactItemize}

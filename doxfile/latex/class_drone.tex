@@ -1,0 +1,319 @@
+\hypertarget{class_drone}{}\doxysection{Drone Class Reference}
+\label{class_drone}\index{Drone@{Drone}}
+
+
+Klasa Dron Przedstawia zlozenie figur geometrycznych przedstawiajacych drona.  
+
+
+
+
+{\ttfamily \#include $<$drone.\+hh$>$}
+
+
+
+Inheritance diagram for Drone\+:
+% FIG 0
+
+
+Collaboration diagram for Drone\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drone}{Drone}} \mbox{\hyperlink{class_drone_af83e828863331e64028fc2883e3f830f}{Create}} (const char $\ast$\mbox{[}7\mbox{]})
+\item 
+\mbox{\hyperlink{class_drone}{Drone}} \mbox{\hyperlink{class_drone_a55f90e480532443d281b5d35dc59a888}{Change\+Files}} (const char $\ast$$\ast$)
+\item 
+\mbox{\hyperlink{class_drone}{Drone}} \mbox{\hyperlink{class_drone_a31cbc687ecc3ec8b295a3aebec9462f0}{Displacement}} (\mbox{\hyperlink{class_vector}{Vector3}})
+\item 
+void \mbox{\hyperlink{class_drone_a27cf115425a10789ee9b7c26ebb14e42}{Update\+Files}} ()
+\item 
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_drone_a4288534a7cfadcd44a16b0df193ad7fc}{Plan\+Path}} ()
+\item 
+bool \mbox{\hyperlink{class_drone_ab33b03af5fb00ea4ecb52005481004be}{Spin\+Rotors}} (double)
+\item 
+\mbox{\hyperlink{class_vector}{Vector3}} \mbox{\hyperlink{class_drone_ae9105a4656d579f888753c3bfecf28f8}{Find\+Orientation}} ()
+\item 
+bool \mbox{\hyperlink{class_drone_a513a467e45b89fbfd85e3c05fd62d7ff}{Adjust\+Orientation}} (\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+bool \mbox{\hyperlink{class_drone_a2a2d3a986fafe32b1d876c90d98639d4}{Idle}} (float, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+bool \mbox{\hyperlink{class_drone_aef5a1e0404f3d1b2dfcf110bb8e21365}{Draw\+Drone\+Rotation}} (double, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+bool \mbox{\hyperlink{class_drone_af711d0d583414b3e0f82b1d630f8b816}{Draw\+Vertical\+Flight}} (\mbox{\hyperlink{class_vector}{Vector3}}, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+bool \mbox{\hyperlink{class_drone_af33c20d857b0b252cd3af79591a33807}{Draw\+Horizontal\+Flight}} (\mbox{\hyperlink{class_vector}{Vector3}}, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+bool \mbox{\hyperlink{class_drone_a8e97956274f063838d5448efe3d4ad75}{Change\+Flight\+Path}} (\mbox{\hyperlink{class_vector}{Vector3}})
+\item 
+virtual double \mbox{\hyperlink{class_drone_ae28daf4b302d8b9b77303b46a56d3c20}{Get\+Diameter}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_drone_a737b3cb474f324a74e7da2d3aeca10c9}\label{class_drone_a737b3cb474f324a74e7da2d3aeca10c9}} 
+class {\bfseries Scene\+Object}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Klasa Dron Przedstawia zlozenie figur geometrycznych przedstawiajacych drona. 
+
+Klasa ta uzywa \mbox{\hyperlink{class_cuboid}{Cuboid}} jako korpus drona i 4x\+Prism jako jego rotory 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drone_a513a467e45b89fbfd85e3c05fd62d7ff}\label{class_drone_a513a467e45b89fbfd85e3c05fd62d7ff}} 
+\index{Drone@{Drone}!AdjustOrientation@{AdjustOrientation}}
+\index{AdjustOrientation@{AdjustOrientation}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{AdjustOrientation()}{AdjustOrientation()}}
+{\footnotesize\ttfamily bool Drone\+::\+Adjust\+Orientation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Funkcja wywolujaca obrot o odpowiedni kat (taki jaki trzeba )
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Angle} & -\/ kat do obrotu \\
+\hline
+\mbox{\texttt{ in}}  & {\em Lacze} & -\/ do rysowania \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Czy} & operacja wykonana poprawnie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_a55f90e480532443d281b5d35dc59a888}\label{class_drone_a55f90e480532443d281b5d35dc59a888}} 
+\index{Drone@{Drone}!ChangeFiles@{ChangeFiles}}
+\index{ChangeFiles@{ChangeFiles}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{ChangeFiles()}{ChangeFiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_drone}{Drone}} Drone\+::\+Change\+Files (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{ }\end{DoxyParamCaption})}
+
+Funckja zmieniajaca aktualnie wpisane pliki dronow
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & char$\ast$ File\+\_\+\+Names\mbox{[}7\mbox{]} to tablica 7 const charow gdzie
+\begin{DoxyItemize}
+\item 1 nazwa pliku korpusu drona
+\item 4 nazwy plikow rotorow
+\item 1 nazwa trasy przelotu
+\item nullptr 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em dron} & z przydzielonymi plikami \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_a8e97956274f063838d5448efe3d4ad75}\label{class_drone_a8e97956274f063838d5448efe3d4ad75}} 
+\index{Drone@{Drone}!ChangeFlightPath@{ChangeFlightPath}}
+\index{ChangeFlightPath@{ChangeFlightPath}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{ChangeFlightPath()}{ChangeFlightPath()}}
+{\footnotesize\ttfamily bool Drone\+::\+Change\+Flight\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{New\+Path }\end{DoxyParamCaption})}
+
+Zmiana trasy na wektor podany przez uzytkownika
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em New\+Path} & -\/ nowy wektor zapisany do pliku trasy przelotu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Czy} & operacja wykonana poprawnie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_af83e828863331e64028fc2883e3f830f}\label{class_drone_af83e828863331e64028fc2883e3f830f}} 
+\index{Drone@{Drone}!Create@{Create}}
+\index{Create@{Create}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_drone}{Drone}} Drone\+::\+Create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+\_\+\+Names\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+
+Funckja czytajaca z plikow dane dla drona
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em const} & char$\ast$ File\+\_\+\+Names\mbox{[}7\mbox{]} to tablica 7 const charow gdzie
+\begin{DoxyItemize}
+\item 1 nazwa pliku korpusu drona
+\item 4 nazwy plikow rotorow
+\item 1 nazwa trasy przelotu
+\item nullptr 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em dron} & B\+EZ przydzielonych plikow, z danymi przydzielonymi do odpowiednich pol \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_a31cbc687ecc3ec8b295a3aebec9462f0}\label{class_drone_a31cbc687ecc3ec8b295a3aebec9462f0}} 
+\index{Drone@{Drone}!Displacement@{Displacement}}
+\index{Displacement@{Displacement}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Displacement()}{Displacement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_drone}{Drone}} Drone\+::\+Displacement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Trans }\end{DoxyParamCaption})}
+
+Funkcja realizujaca lot drona po linii prostej o jakis wektor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Vector3} & Trans -\/ wektor o ktory przesuniety zostanie dron \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em przesuniety} & dron o wektor Trans \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_aef5a1e0404f3d1b2dfcf110bb8e21365}\label{class_drone_aef5a1e0404f3d1b2dfcf110bb8e21365}} 
+\index{Drone@{Drone}!DrawDroneRotation@{DrawDroneRotation}}
+\index{DrawDroneRotation@{DrawDroneRotation}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{DrawDroneRotation()}{DrawDroneRotation()}}
+{\footnotesize\ttfamily bool Drone\+::\+Draw\+Drone\+Rotation (\begin{DoxyParamCaption}\item[{double}]{Total\+Angle,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Funkcja drona o konkretny kat (calego drona) w obliczanym czasie
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Angle} & -\/ kat do obrotu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em dron} & i wszystkie jego elementy obrocone w czasie zaleznym od kata \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_af33c20d857b0b252cd3af79591a33807}\label{class_drone_af33c20d857b0b252cd3af79591a33807}} 
+\index{Drone@{Drone}!DrawHorizontalFlight@{DrawHorizontalFlight}}
+\index{DrawHorizontalFlight@{DrawHorizontalFlight}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{DrawHorizontalFlight()}{DrawHorizontalFlight()}}
+{\footnotesize\ttfamily bool Drone\+::\+Draw\+Horizontal\+Flight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Path\+Vector,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Poziome przesuniecie drona w czasie
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Path\+Vector} & -\/ wektor o ktory przesunie sie dron poziomo \\
+\hline
+\mbox{\texttt{ in}}  & {\em Lacze} & -\/ do rysowania \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Czy} & operacja wykonana poprawnie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_af711d0d583414b3e0f82b1d630f8b816}\label{class_drone_af711d0d583414b3e0f82b1d630f8b816}} 
+\index{Drone@{Drone}!DrawVerticalFlight@{DrawVerticalFlight}}
+\index{DrawVerticalFlight@{DrawVerticalFlight}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{DrawVerticalFlight()}{DrawVerticalFlight()}}
+{\footnotesize\ttfamily bool Drone\+::\+Draw\+Vertical\+Flight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Path\+Vector,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Pionowe przesuniecie drona w czasie
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Path\+Vector} & -\/ wektor o ktory przesunie sie dron pionowo \\
+\hline
+\mbox{\texttt{ in}}  & {\em Lacze} & -\/ do rysowania \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Czy} & operacja wykonana poprawnie \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_ae9105a4656d579f888753c3bfecf28f8}\label{class_drone_ae9105a4656d579f888753c3bfecf28f8}} 
+\index{Drone@{Drone}!FindOrientation@{FindOrientation}}
+\index{FindOrientation@{FindOrientation}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{FindOrientation()}{FindOrientation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector3}} Drone\+::\+Find\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcja znajdujaca kat orientacji w przestrzeni
+
+
+\begin{DoxyRetVals}{Return values}
+{\em wektor} & jednostokwy celujacy do przadu od srodka drona \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_ae28daf4b302d8b9b77303b46a56d3c20}\label{class_drone_ae28daf4b302d8b9b77303b46a56d3c20}} 
+\index{Drone@{Drone}!GetDiameter@{GetDiameter}}
+\index{GetDiameter@{GetDiameter}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{GetDiameter()}{GetDiameter()}}
+{\footnotesize\ttfamily double Drone\+::\+Get\+Diameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Obliczenie promienia zajmowanego przez drona okregu w ktory nic nie powinno wejsc
+
+
+\begin{DoxyRetVals}{Return values}
+{\em dlugosc} & promienia \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_object_a08811f35be9a05741d02767662da68f5}{Scene\+Object}}.
+
+\mbox{\Hypertarget{class_drone_a2a2d3a986fafe32b1d876c90d98639d4}\label{class_drone_a2a2d3a986fafe32b1d876c90d98639d4}} 
+\index{Drone@{Drone}!Idle@{Idle}}
+\index{Idle@{Idle}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Idle()}{Idle()}}
+{\footnotesize\ttfamily bool Drone\+::\+Idle (\begin{DoxyParamCaption}\item[{float}]{time,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Dron stoi i w powietrzu obraca rotorami i nic nie robi przez time czasu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em time} & -\/ czas przez ktory dron bedzie stal \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em czy} & operacja sie powiodla \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_a4288534a7cfadcd44a16b0df193ad7fc}\label{class_drone_a4288534a7cfadcd44a16b0df193ad7fc}} 
+\index{Drone@{Drone}!PlanPath@{PlanPath}}
+\index{PlanPath@{PlanPath}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{PlanPath()}{PlanPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vector}{Vector3}} Drone\+::\+Plan\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funckja planujaca trase drona czytajac z pliku o nazwie zapisanej w klasie liczy wektor trasy
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Wektor} & o ktory powinien sie poruszyc dron (calosciowo) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_ab33b03af5fb00ea4ecb52005481004be}\label{class_drone_ab33b03af5fb00ea4ecb52005481004be}} 
+\index{Drone@{Drone}!SpinRotors@{SpinRotors}}
+\index{SpinRotors@{SpinRotors}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{SpinRotors()}{SpinRotors()}}
+{\footnotesize\ttfamily bool Drone\+::\+Spin\+Rotors (\begin{DoxyParamCaption}\item[{double}]{Angle }\end{DoxyParamCaption})}
+
+Funkcja obracajaca rotorki o jakis zadany konkretny kat
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Angle} & -\/ kat do obrotu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em dron} & z obroconymi rotorami \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_drone_a27cf115425a10789ee9b7c26ebb14e42}\label{class_drone_a27cf115425a10789ee9b7c26ebb14e42}} 
+\index{Drone@{Drone}!UpdateFiles@{UpdateFiles}}
+\index{UpdateFiles@{UpdateFiles}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{UpdateFiles()}{UpdateFiles()}}
+{\footnotesize\ttfamily void Drone\+::\+Update\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funckja zapisuje aktualnie znajdujace sie w klasie dron dane do plikow 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/drone.\+hh\item 
+include/scene.\+hh\item 
+src/drone.\+cpp\end{DoxyCompactItemize}

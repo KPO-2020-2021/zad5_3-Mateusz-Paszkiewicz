@@ -144,6 +144,13 @@ std::ostream &operator<<(std::ostream &out, Prism &pri)
 }
 
 
+/*!
+ * Obrot Prism o kat Angle
+*
+*\param[in] Angle - kat obrotu Prisma
+*\param[in] axis - os wokol ktorej bedzie obrocony Prism
+*\retval Obrocony Prism
+*/
 Prism Prism::AngleTrans(double Angle, char axis)
 {
   float sign=1;
@@ -185,6 +192,13 @@ Prism Prism::AngleTrans(double Angle, char axis)
 
 }
 
+
+/*!
+ * Znajduje punkt w geometrycznym srodku graniastoslipa
+*
+*
+*\retval wektor symbolizujacy punkt srodka Prisma
+*/
 Vector3 Prism::GetPosition()
 {
   double p0_arr[3]={(*this)(0,0),(*this)(0,1),(*this)(0,2)};  //points opposite to each other
@@ -203,7 +217,13 @@ Vector3 Prism::GetPosition()
   return (*this).Position;
 }
 
-
+/*!
+ * Funktor () Prisma
+*
+*\param[in] pointNum - Numer punktu prisma do zwrocenia
+*\param[in] axis - os wokol ktorej bedzie obrocony Prism
+*\retval Obrocony Prism
+*/
 Vector3 Prism::operator () (unsigned int pointNum)    //This overload is very important
 {
   if (pointNum >= 12) {

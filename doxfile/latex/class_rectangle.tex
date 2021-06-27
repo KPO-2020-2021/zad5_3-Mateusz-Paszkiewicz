@@ -1,0 +1,91 @@
+\hypertarget{class_rectangle}{}\doxysection{Rectangle Class Reference}
+\label{class_rectangle}\index{Rectangle@{Rectangle}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rectangle_ac2edbe7196d79ffc98f0409885f43d67}\label{class_rectangle_ac2edbe7196d79ffc98f0409885f43d67}} 
+{\bfseries Rectangle} (double\mbox{[}4\mbox{]}\mbox{[}2\mbox{]})
+\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a6974d963e1e1b8af15e7ebc807e0bb5f}{operator+}} (\mbox{\hyperlink{class_vector}{Vector2}} const)
+\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a756af242b3717c4ee001b2555431b334}{Angle\+Trans}} (double Angle)
+\item 
+double \& \mbox{\hyperlink{class_rectangle_a44179dad93584367c87d78371c33c930}{operator()}} (unsigned int point, unsigned int axis)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rectangle_a147afffbf5d760a4ce0ef1c05ab0d7d8}\label{class_rectangle_a147afffbf5d760a4ce0ef1c05ab0d7d8}} 
+double {\bfseries rect} \mbox{[}4\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rectangle_a756af242b3717c4ee001b2555431b334}\label{class_rectangle_a756af242b3717c4ee001b2555431b334}} 
+\index{Rectangle@{Rectangle}!AngleTrans@{AngleTrans}}
+\index{AngleTrans@{AngleTrans}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{AngleTrans()}{AngleTrans()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::\+Angle\+Trans (\begin{DoxyParamCaption}\item[{double}]{Angle }\end{DoxyParamCaption})}
+
+funckja rotacji prostokata w lewa strone (przeciwnie do wsk. zegara)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & rectangle of which coordinates will be rotated \\
+\hline
+\mbox{\texttt{ in}}  & {\em angle} & -\/ angle value of the rotation \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em new} & coordinates of rotated rectangle \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_rectangle_a44179dad93584367c87d78371c33c930}\label{class_rectangle_a44179dad93584367c87d78371c33c930}} 
+\index{Rectangle@{Rectangle}!operator()@{operator()}}
+\index{operator()@{operator()}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double \& Rectangle\+::operator() (\begin{DoxyParamCaption}\item[{unsigned int}]{point,  }\item[{unsigned int}]{axis }\end{DoxyParamCaption})}
+
+funktor () prostokata
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & rectangle of the coordinate to be extracted \\
+\hline
+\mbox{\texttt{ in}}  & {\em point\+Num} & -\/ number of the wanted point \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ axis of the wanted coordinate \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em const} & value of the coordinate of indicated values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_rectangle_a6974d963e1e1b8af15e7ebc807e0bb5f}\label{class_rectangle_a6974d963e1e1b8af15e7ebc807e0bb5f}} 
+\index{Rectangle@{Rectangle}!operator+@{operator+}}
+\index{operator+@{operator+}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector2}} const}]{Vect }\end{DoxyParamCaption})}
+
+przeciazenie operatora + dla prostokata
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & rectangle of which coordinates will be the L\+HS operands of the addition \\
+\hline
+\mbox{\texttt{ in}}  & {\em Vect} & -\/ vector that will be added to every point of the rectangle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em new} & coordinates of rectangle \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/rectangle.\+hh\item 
+src/rectangle.\+cpp\end{DoxyCompactItemize}

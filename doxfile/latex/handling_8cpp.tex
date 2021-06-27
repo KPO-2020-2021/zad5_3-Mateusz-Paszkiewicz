@@ -1,0 +1,196 @@
+\hypertarget{handling_8cpp}{}\doxysection{/home/kalafiorek/\+Programowanie\+\_\+obj2021/zad5\+\_\+3-\/\+Mateusz-\/\+Paszkiewicz/src/handling.cpp File Reference}
+\label{handling_8cpp}\index{/home/kalafiorek/Programowanie\_obj2021/zad5\_3-\/Mateusz-\/Paszkiewicz/src/handling.cpp@{/home/kalafiorek/Programowanie\_obj2021/zad5\_3-\/Mateusz-\/Paszkiewicz/src/handling.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}../include/handling.\+hh\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{handling_8cpp_a13190460cc0a7a591404e27f7dc3913a}{Coords\+Read\+From\+File}} (char $\ast$s\+Nazwa\+Pliku, Rectangle \&Rect)
+\item 
+bool \mbox{\hyperlink{handling_8cpp_a76c8e3c6f6ed66cb82cebe67bb954bc7}{Coords\+Read\+From\+File}} (const char $\ast$s\+Nazwa\+Pliku, Cuboid \&Cub)
+\item 
+void \mbox{\hyperlink{handling_8cpp_af75768f87bff8d2c57ef019123ba86fd}{Coords\+To\+Stream}} (std\+::ostream \&Strm\+Wy, Rectangle \&Rect)
+\item 
+void \mbox{\hyperlink{handling_8cpp_a48990090a0c25620c37eb6dbd2bf5334}{Coords\+To\+Stream}} (std\+::ostream \&Strm\+Wy, Cuboid \&Cub)
+\item 
+bool \mbox{\hyperlink{handling_8cpp_a6688018e805e8967b951fac462879568}{Save\+Coords\+To\+File}} (const char $\ast$s\+Nazwa\+Pliku, Rectangle \&Rect)
+\item 
+bool \mbox{\hyperlink{handling_8cpp_a507bf65f9819b7c7e25c859bafc71952}{Save\+Coords\+To\+File}} (const char $\ast$s\+Nazwa\+Pliku, Cuboid \&Cub)
+\item 
+bool \mbox{\hyperlink{handling_8cpp_a1cc47055eda301cf39f66b704933ff4f}{Coords\+Read\+From\+File}} (const char $\ast$s\+Nazwa\+Pliku, Prism \&Pri)
+\item 
+void \mbox{\hyperlink{handling_8cpp_aff044eb72f328657f92a2d1c2f347e9f}{Coords\+To\+Stream}} (std\+::ostream \&Strm\+Wy, Prism \&Pri)
+\item 
+bool \mbox{\hyperlink{handling_8cpp_af16b0ec2d4b3421054f0972cccb0dd8f}{Save\+Coords\+To\+File}} (const char $\ast$s\+Nazwa\+Pliku, Prism \&Pri)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{handling_8cpp_a13190460cc0a7a591404e27f7dc3913a}\label{handling_8cpp_a13190460cc0a7a591404e27f7dc3913a}} 
+\index{handling.cpp@{handling.cpp}!CoordsReadFromFile@{CoordsReadFromFile}}
+\index{CoordsReadFromFile@{CoordsReadFromFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsReadFromFile()}{CoordsReadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Coords\+Read\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Rectangle \&}]{Rect }\end{DoxyParamCaption})}
+
+Funkcja odczytu zestawu punktow prostokata 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Rect} & -\/ objekt klasy rectangle do ktorego zapisane zostana dane \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_a76c8e3c6f6ed66cb82cebe67bb954bc7}\label{handling_8cpp_a76c8e3c6f6ed66cb82cebe67bb954bc7}} 
+\index{handling.cpp@{handling.cpp}!CoordsReadFromFile@{CoordsReadFromFile}}
+\index{CoordsReadFromFile@{CoordsReadFromFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsReadFromFile()}{CoordsReadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Coords\+Read\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Cuboid \&}]{Cub }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow prostopadloscianu do strumienia wyjściowego. Dane sa odpowiednio sformatowane, tzn. przyjęto notację stałoprzecinkową z dokładnością do 10 miejsca po przecinku. Szerokość wyświetlanego pola to 16 miejsc, sposób wyrównywania -\/ do prawej strony. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_a1cc47055eda301cf39f66b704933ff4f}\label{handling_8cpp_a1cc47055eda301cf39f66b704933ff4f}} 
+\index{handling.cpp@{handling.cpp}!CoordsReadFromFile@{CoordsReadFromFile}}
+\index{CoordsReadFromFile@{CoordsReadFromFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsReadFromFile()}{CoordsReadFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Coords\+Read\+From\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Prism \&}]{Pri }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow graniastoslupa do strumienia wyjściowego. Dane sa odpowiednio sformatowane, tzn. przyjęto notację stałoprzecinkową z dokładnością do 10 miejsca po przecinku. Szerokość wyświetlanego pola to 16 miejsc, sposób wyrównywania -\/ do prawej strony. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_a48990090a0c25620c37eb6dbd2bf5334}\label{handling_8cpp_a48990090a0c25620c37eb6dbd2bf5334}} 
+\index{handling.cpp@{handling.cpp}!CoordsToStream@{CoordsToStream}}
+\index{CoordsToStream@{CoordsToStream}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsToStream()}{CoordsToStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Coords\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{Strm\+Wy,  }\item[{Cuboid \&}]{Cub }\end{DoxyParamCaption})}
+
+Funkcja zapisu zestawu punktow prostopadloscianu do strumienia 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cub} & -\/ objekt klasy cuboid do ktorego zapisane zostana dane \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_aff044eb72f328657f92a2d1c2f347e9f}\label{handling_8cpp_aff044eb72f328657f92a2d1c2f347e9f}} 
+\index{handling.cpp@{handling.cpp}!CoordsToStream@{CoordsToStream}}
+\index{CoordsToStream@{CoordsToStream}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsToStream()}{CoordsToStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Coords\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{Strm\+Wy,  }\item[{Prism \&}]{Pri }\end{DoxyParamCaption})}
+
+Funkcja zapisu zestawu punktow graniastoslupa do strumienia 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Pri} & -\/ objekt klasy prism do ktorego zapisane zostana dane \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_af75768f87bff8d2c57ef019123ba86fd}\label{handling_8cpp_af75768f87bff8d2c57ef019123ba86fd}} 
+\index{handling.cpp@{handling.cpp}!CoordsToStream@{CoordsToStream}}
+\index{CoordsToStream@{CoordsToStream}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{CoordsToStream()}{CoordsToStream()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Coords\+To\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{Strm\+Wy,  }\item[{Rectangle \&}]{Rect }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow prostopadloscianu do strumienia wyjściowego. Dane sa odpowiednio sformatowane, tzn. przyjęto notację stałoprzecinkową z dokładnością do 10 miejsca po przecinku. Szerokość wyświetlanego pola to 16 miejsc, sposób wyrównywania -\/ do prawej strony. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Strm\+Wy} & -\/ strumien wyjsciowy, do ktorego maja zostac zapisane kolejne wspolrzedne. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_a507bf65f9819b7c7e25c859bafc71952}\label{handling_8cpp_a507bf65f9819b7c7e25c859bafc71952}} 
+\index{handling.cpp@{handling.cpp}!SaveCoordsToFile@{SaveCoordsToFile}}
+\index{SaveCoordsToFile@{SaveCoordsToFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{SaveCoordsToFile()}{SaveCoordsToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Save\+Coords\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Cuboid \&}]{Cub }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow do pliku, z ktorego dane odczyta program gnuplot i narysuje je w swoim oknie graficznym. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s\+Nazwa\+Pliku} & -\/ nazwa pliku, do którego zostana zapisane wspolrzędne punktów. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_af16b0ec2d4b3421054f0972cccb0dd8f}\label{handling_8cpp_af16b0ec2d4b3421054f0972cccb0dd8f}} 
+\index{handling.cpp@{handling.cpp}!SaveCoordsToFile@{SaveCoordsToFile}}
+\index{SaveCoordsToFile@{SaveCoordsToFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{SaveCoordsToFile()}{SaveCoordsToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Save\+Coords\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Prism \&}]{Pri }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow do pliku, z ktorego dane odczyta program gnuplot i narysuje je w swoim oknie graficznym. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s\+Nazwa\+Pliku} & -\/ nazwa pliku, do którego zostana zapisane wspolrzędne punktów. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{handling_8cpp_a6688018e805e8967b951fac462879568}\label{handling_8cpp_a6688018e805e8967b951fac462879568}} 
+\index{handling.cpp@{handling.cpp}!SaveCoordsToFile@{SaveCoordsToFile}}
+\index{SaveCoordsToFile@{SaveCoordsToFile}!handling.cpp@{handling.cpp}}
+\doxysubsubsection{\texorpdfstring{SaveCoordsToFile()}{SaveCoordsToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Save\+Coords\+To\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Nazwa\+Pliku,  }\item[{Rectangle \&}]{Rect }\end{DoxyParamCaption})}
+
+Przyklad zapisu wspolrzednych zbioru punktow do pliku, z ktorego dane odczyta program gnuplot i narysuje je w swoim oknie graficznym. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em s\+Nazwa\+Pliku} & -\/ nazwa pliku, do którego zostana zapisane wspolrzędne punktów. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & -\/ gdy operacja zapisu powiodła się, \\
+\hline
+{\em false} & -\/ w przypadku przeciwnym. \\
+\hline
+\end{DoxyRetVals}

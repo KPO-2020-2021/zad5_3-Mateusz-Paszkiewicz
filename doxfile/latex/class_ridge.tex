@@ -1,0 +1,98 @@
+\hypertarget{class_ridge}{}\doxysection{Ridge Class Reference}
+\label{class_ridge}\index{Ridge@{Ridge}}
+
+
+\mbox{\hyperlink{class_plateau}{Plateau}} przedstawia gran.  
+
+
+
+
+{\ttfamily \#include $<$environment.\+hh$>$}
+
+
+
+Inheritance diagram for Ridge\+:
+% FIG 0
+
+
+Collaboration diagram for Ridge\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ridge}{Ridge}} \mbox{\hyperlink{class_ridge_aeba69d05f4e4bf94db125d1c700fcadf}{Create\+Ridge}} (const char $\ast$, \mbox{\hyperlink{class_vector}{Vector3}} Start\+Point, \mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}})
+\item 
+\mbox{\hyperlink{class_ridge}{Ridge}} \mbox{\hyperlink{class_ridge_ac87e02b1a3d3ebeee007c9d370954572}{operator+}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\item 
+\mbox{\hyperlink{class_ridge}{Ridge}} \mbox{\hyperlink{class_ridge_a36bb12fa23c3a112195ab1795fd32a04}{operator-\/}} (\mbox{\hyperlink{class_vector}{Vector3}} \&tmp)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_plateau}{Plateau}} przedstawia gran. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ridge_aeba69d05f4e4bf94db125d1c700fcadf}\label{class_ridge_aeba69d05f4e4bf94db125d1c700fcadf}} 
+\index{Ridge@{Ridge}!CreateRidge@{CreateRidge}}
+\index{CreateRidge@{CreateRidge}!Ridge@{Ridge}}
+\doxysubsubsection{\texorpdfstring{CreateRidge()}{CreateRidge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ridge}{Ridge}} Ridge\+::\+Create\+Ridge (\begin{DoxyParamCaption}\item[{const char $\ast$}]{File\+\_\+\+Name,  }\item[{\mbox{\hyperlink{class_vector}{Vector3}}}]{Start\+Point,  }\item[{\mbox{\hyperlink{class_pz_g_1_1_lacze_do_g_n_u_plota}{Pz\+G\+::\+Lacze\+Do\+G\+N\+U\+Plota}}}]{Lacze }\end{DoxyParamCaption})}
+
+Funckja czytajaca z plikow dane dla przeszkody i tworzaca plik(!) specjalnie dla tego objektu
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Start\+Point} & miejsce na ktore objekt wejdzie na mapie \\
+\hline
+\mbox{\texttt{ in}}  & {\em const} & char$\ast$ File\+\_\+\+Names nazwa pliku struktury objektu \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Objekt} & utworzony przez plik \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_ridge_ac87e02b1a3d3ebeee007c9d370954572}\label{class_ridge_ac87e02b1a3d3ebeee007c9d370954572}} 
+\index{Ridge@{Ridge}!operator+@{operator+}}
+\index{operator+@{operator+}!Ridge@{Ridge}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ridge}{Ridge}} Ridge\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora dodawania dla ridge
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & ridge przesuniety o wektor tmp \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{class_ridge_a36bb12fa23c3a112195ab1795fd32a04}\label{class_ridge_a36bb12fa23c3a112195ab1795fd32a04}} 
+\index{Ridge@{Ridge}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Ridge@{Ridge}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ridge}{Ridge}} Ridge\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector}{Vector3}} \&}]{tmp }\end{DoxyParamCaption})}
+
+Przeciazenie operatora odejmowania dla ridge
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tmp} & -\/ wektor odwrotny do wektora ktory przesunie objekt \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em objekt} & ridge przesuniety o wektor -\/tmp \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/environment.\+hh\item 
+src/environment.\+cpp\end{DoxyCompactItemize}

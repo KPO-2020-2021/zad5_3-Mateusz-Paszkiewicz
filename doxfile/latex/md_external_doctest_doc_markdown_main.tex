@@ -1,0 +1,62 @@
+The usual way of writing tests in C++ has always been into separate source files from the code they test that form an executable containing only tests. In that scenario the default {\ttfamily main()} provided by {\bfseries{doctest}} is usually sufficient\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{\#define DOCTEST\_CONFIG\_IMPLEMENT\_WITH\_MAIN}
+\DoxyCodeLine{\#include "doctest.h"}
+\end{DoxyCode}
+
+
+This should be done in exactly one source file and is even a good idea to do this in a separate file with nothing else in it.
+
+However if you need more control -\/ want to set options with code to the execution context or want to integrate the framework in your production code -\/ then the default {\ttfamily main()} just won\textquotesingle{}t do the job. In that case use \href{configuration.md\#doctest_config_implement}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+NT}$\ast$$\ast$}}.
+
+All the $\ast$$\ast$command line$\ast$$\ast$ options can be set like this (flags cannot because it wouldn\textquotesingle{}t make sense). Filters can only be appended or cleared with the {\ttfamily add\+Filter()} or {\ttfamily clear\+Filters()} method of a {\ttfamily doctest\+::\+Context} object -\/ the user cannot remove a specific filter with code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c++\}}
+\DoxyCodeLine{\#define DOCTEST\_CONFIG\_IMPLEMENT}
+\DoxyCodeLine{\#include "doctest.h"}
+\DoxyCodeLine{}
+\DoxyCodeLine{int main(int argc, char** argv) \{}
+\DoxyCodeLine{    doctest::Context context;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // !!! THIS IS JUST AN EXAMPLE SHOWING HOW DEFAULTS/OVERRIDES ARE SET !!!}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // defaults}
+\DoxyCodeLine{    context.addFilter("test-\/case-\/exclude", "*math*"); // exclude test cases with "math" in their name}
+\DoxyCodeLine{    context.setOption("abort-\/after", 5);              // stop test execution after 5 failed assertions}
+\DoxyCodeLine{    context.setOption("order-\/by", "name");            // sort the test cases by their name}
+\DoxyCodeLine{}
+\DoxyCodeLine{    context.applyCommandLine(argc, argv);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    // overrides}
+\DoxyCodeLine{    context.setOption("no-\/breaks", true);             // don't break in the debugger when assertions fail}
+\DoxyCodeLine{}
+\DoxyCodeLine{    int res = context.run(); // run}
+\DoxyCodeLine{}
+\DoxyCodeLine{    if(context.shouldExit()) // important -\/ query flags (and -\/-\/exit) rely on the user doing this}
+\DoxyCodeLine{        return res;          // propagate the result of the tests}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    int client\_stuff\_return\_code = 0;}
+\DoxyCodeLine{    // your program -\/ if the testing framework is integrated in your production code}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    return res + client\_stuff\_return\_code; // the result from doctest is propagated here as well}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Note the call to {\ttfamily .should\+Exit()} on the context -\/ that is very important -\/ it will be set when a query flag has been used (or the {\ttfamily -\/-\/no-\/run} option is set to {\ttfamily true}) and it is the user\textquotesingle{}s responsibility to exit the application in a normal way.\hypertarget{md_external_doctest_doc_markdown_main_autotoc_md119}{}\doxysubsection{Dealing with shared objects (\+D\+L\+Ls)}\label{md_external_doctest_doc_markdown_main_autotoc_md119}
+The framework can be used separately in binaries (executables / shared objects) with each having it\textquotesingle{}s own test runner -\/ this way even different versions of doctest can be used -\/ but there will be no simple way to execute the tests from all loaded binaries and have the results aggregated and summarized.
+
+There is also an option to have the test runner (implementation) built in a binary and shared with others (so there is a single test registry) by exporting it\textquotesingle{}s public symbols (the ones needed for writing tests by the user -\/ all the forward declarations of the framework).
+
+For more info on that checkout the \href{configuration.md\#doctest_config_implementation_in_dll}{\texttt{ $\ast$$\ast${\ttfamily D\+O\+C\+T\+E\+S\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+I\+N\+\_\+\+D\+LL}$\ast$$\ast$}} config identifier and \href{../../examples/executable_dll_and_plugin/}{\texttt{ {\bfseries{this example}}}}.
+
+\DoxyHorRuler{0}
+
+
+\href{readme.md\#reference}{\texttt{ Home}}
+

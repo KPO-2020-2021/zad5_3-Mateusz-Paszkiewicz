@@ -13,7 +13,7 @@
 #include "cuboid.hh"
 #include "prism.hh"
 
-/*          DRONE CLASS VISUALISATION (i tried xD)
+/*          DRONE CLASS VISUALISATION
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄▄▄▄░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░█▀▀▀░░░░▀▄░░░░░░░░░░░░░░░░░░
 ░░Prism Rotor[2]░░░░░░░░▄█▀░░░░░░░░░░█░░░░░░░░░░░░░░░░░
@@ -47,6 +47,15 @@
 
 class Scene;  //Declaration of Scene class so the compiler knows it's coming
 
+/*!
+*\brief Klasa Dron Przedstawia zlozenie figur geometrycznych
+* przedstawiajacych drona
+*
+*
+* Klasa ta uzywa Cuboid jako korpus drona i 4xPrism jako
+* jego rotory
+*
+*/
 class Drone : public SceneObject, Cuboid, Prism{
 private:
   Cuboid Body;

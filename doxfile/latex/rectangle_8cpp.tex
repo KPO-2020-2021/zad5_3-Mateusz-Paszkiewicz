@@ -1,0 +1,55 @@
+\hypertarget{rectangle_8cpp}{}\doxysection{/home/kalafiorek/\+Programowanie\+\_\+obj2021/zad5\+\_\+3-\/\+Mateusz-\/\+Paszkiewicz/src/rectangle.cpp File Reference}
+\label{rectangle_8cpp}\index{/home/kalafiorek/Programowanie\_obj2021/zad5\_3-\/Mateusz-\/Paszkiewicz/src/rectangle.cpp@{/home/kalafiorek/Programowanie\_obj2021/zad5\_3-\/Mateusz-\/Paszkiewicz/src/rectangle.cpp}}
+{\ttfamily \#include \char`\"{}../include/rectangle.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/vector.\+hh\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{rectangle_8cpp_a6c172a77275ac0b6df0d36928b6b4ad8}{operator$>$$>$}} (std\+::istream \&in, Rectangle \&rect)
+\item 
+std\+::ostream \& \mbox{\hyperlink{rectangle_8cpp_a2654d723839c3013f27e0d78eedbda05}{operator$<$$<$}} (std\+::ostream \&out, Rectangle \&Rectangle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rectangle_8cpp_a2654d723839c3013f27e0d78eedbda05}\label{rectangle_8cpp_a2654d723839c3013f27e0d78eedbda05}} 
+\index{rectangle.cpp@{rectangle.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rectangle.cpp@{rectangle.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{Rectangle \&}]{Rectangle }\end{DoxyParamCaption})}
+
+przeciazenie operatora $<$$<$ dla prostokata
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & rectangle to be inputed into the stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em out} & -\/ output stream of coords \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em data} & output of stream \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{rectangle_8cpp_a6c172a77275ac0b6df0d36928b6b4ad8}\label{rectangle_8cpp_a6c172a77275ac0b6df0d36928b6b4ad8}} 
+\index{rectangle.cpp@{rectangle.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rectangle.cpp@{rectangle.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{Rectangle \&}]{rect }\end{DoxyParamCaption})}
+
+przeciazenie operatora $>$$>$ dla prostokata
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ($\ast$this)} & rectangle object for input data \\
+\hline
+\mbox{\texttt{ in}}  & {\em in} & -\/ input stream of coords \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em data} & input into stream \\
+\hline
+\end{DoxyRetVals}

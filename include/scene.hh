@@ -28,6 +28,8 @@ public:
 
   void AddSpikyHill( SpikyHill &Arg )
   {
+    std::cout<<"dodano spiky hill"<<std::endl;
+
    std::shared_ptr Ptr_Mountain = std::make_shared<SceneObject>( Arg );
    _SceneObjectList.push_back(Ptr_Mountain);
   }
@@ -51,6 +53,8 @@ public:
 
   void AddRidge( Ridge &Arg )
   {
+    std::cout<<"dodano ridge"<<std::endl;
+
    std::shared_ptr Ptr_Mountain = std::make_shared<SceneObject>( Arg );
    _SceneObjectList.push_back(Ptr_Mountain);
   }

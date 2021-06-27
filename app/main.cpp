@@ -108,8 +108,8 @@ int main() {
 
 //------ Hardwired objects-----
   double arr1[3]={100, 100, 0};
-  double arr2[3]={50, 30, 0};
-  double arr3[3]={150, 30, 0};
+  double arr2[3]={40, 40, 0};
+  double arr3[3]={140, 50, 0};
   Vector3 HWired1=Vector3(arr1);
   Vector3 HWired2=Vector3(arr2);
   Vector3 HWired3=Vector3(arr3);
@@ -123,7 +123,7 @@ int main() {
   Main_Scene.AddSpikyHill(HWObj2);
 
   Ridge HWObj3=Ridge();
-  HWObj3.CreateRidge(ACTUAL_FILE__MOUNTAIN1, HWired3 , Lacze);
+  HWObj3.CreateRidge(ACTUAL_FILE__MOUNTAIN3, HWired3 , Lacze);
   Main_Scene.AddRidge(HWObj3);
 //------End of Hardwired objects-----
 

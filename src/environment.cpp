@@ -74,8 +74,6 @@ Plateau Plateau::CreatePlateau(const char *File_Name, Vector3 StartPoint , PzG::
 
   SaveCoordsToFile(const_name, this->Structure);
 
-  std::cout<<this->Bottom;
-
   Lacze.DodajNazwePliku(const_name);
   Lacze.Rysuj();
 
@@ -120,8 +118,6 @@ Ridge Ridge::CreateRidge(const char *File_Name, Vector3 StartPoint , PzG::LaczeD
   (*this)=(*this)-Tmp+StartPoint;
 
   SaveCoordsToFile(const_name, this->Structure);
-
-  std::cout<<this->Bottom;
 
   Lacze.DodajNazwePliku(const_name);
   Lacze.Rysuj();

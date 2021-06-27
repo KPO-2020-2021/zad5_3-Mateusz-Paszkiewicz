@@ -23,7 +23,8 @@ public:
 
   virtual double GetDiameter();
 
-  bool DoDiametersInterfere(SceneObject);
+  bool DoDiametersInterfere(double, Vector3);
+
 
   friend class Drone;
 };

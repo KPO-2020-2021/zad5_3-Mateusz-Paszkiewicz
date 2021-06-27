@@ -143,16 +143,14 @@ chrono
 -
 thread
 -
-lacze_do_gnuplota.hh
-/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/lacze_do_gnuplota.hh
 exampleConfig.h
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/exampleConfig.h
-handling.hh
-/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/handling.hh
 vector.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/vector.hh
 matrix.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/matrix.hh
+handling.hh
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/handling.hh
 rectangle.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/rectangle.hh
 cuboid.hh
@@ -165,6 +163,8 @@ environment.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/environment.hh
 scene.hh
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/scene.hh
+lacze_do_gnuplota.hh
+/home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/app/lacze_do_gnuplota.hh
 
 /home/kalafiorek/Programowanie_obj2021/zad5_3-Mateusz-Paszkiewicz/external/doctest/doctest/doctest.h
 iosfwd

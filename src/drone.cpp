@@ -236,6 +236,26 @@ bool Drone::DrawHorizontalFlight(Vector3 PathVector, PzG::LaczeDoGNUPlota Lacze)
     return false;
 }
 
+bool Drone::ChangeFlightPath(Vector3 NewPath)
+{
+  std::ofstream  fin;
+
+  fin.open(this->File_Names[5]);
+  if (!fin.is_open())  {
+    std::cerr << ":(  Operacja otwarcia do zapisu \"" << this->File_Names[5] << "\"" << std::endl
+   << ":(  nie powiodla sie." << std::endl;
+    return 0;
+    }
+
+  fin<< this->Body.GetPosition()[0] << " " << this->Body.GetPosition()[1] << " " << this->Body.GetPosition()[2] <<std::endl;
+  fin<< this->Body.GetPosition()[0] << " " << this->Body.GetPosition()[1] << " " << 80 <<std::endl;
+  fin<< NewPath[0] << " " << NewPath[1] << " " << 80 <<std::endl;
+  fin<< NewPath[0] << " " << NewPath[1] << " " << NewPath[2] <<std::endl;
+
+  return 1;
+}
+
+
 double Drone::GetDiameter()
 {
   return ( this->Rotor[0].GetPosition() - this->Rotor[0](0) ).Length() + (this->Body.GetPosition() - this->Body(0) ).Length();

@@ -16,17 +16,17 @@
 #include <chrono>
 #include <thread>
 
-#include "lacze_do_gnuplota.hh"
 #include "exampleConfig.h"
-#include "handling.hh"
 #include "vector.hh"
 #include "matrix.hh"
+#include "handling.hh"
 #include "rectangle.hh"
 #include "cuboid.hh"
 #include "prism.hh"
 #include "drone.hh"
 #include "environment.hh"
 #include "scene.hh"
+#include "lacze_do_gnuplota.hh"
 
 
 #define CUBOID_MODEL_FILE      "../datasets/bryly_wzorcowe/szescian.dat"
@@ -108,11 +108,17 @@ int main() {
 
 //------ Hardwired objects-----
   double arr[3]={100, 100, 0};
+  //double arr1[3]={50, 30, 0};
   Vector3 HWired=Vector3(arr);
+  //Vector3 HWired1=Vector3(arr1);
 
   Plateau Object=Plateau();
   Object.CreatePlateau(ACTUAL_FILE__PLATEAU, HWired , Lacze);
   Main_Scene.AddPlateau(Object);
+
+  //SpikyHill ObjectTest=SpikyHill();
+  //ObjectTest.CreateSpikyHill(ACTUAL_FILE__MOUNTAIN1, HWired1 , Lacze);
+  //Main_Scene.AddSpikyHill(ObjectTest);
 //------ Hardwired objects-----
 
   char option;
@@ -167,6 +173,19 @@ Menu:
     {
       goto Flying;
     }
+    case 'p':
+    {
+      Vector3 Input;
+
+      std::cout<<"Please enter vector for the new path"<<std::endl;
+      std::cin>>Input;
+
+      Drone1.ChangeFlightPath(Input);
+      Drone1.PlanPath();
+
+      Lacze.Rysuj();
+      goto Menu;
+    }
     case 'q':
     {
       exit(0);
@@ -189,9 +208,12 @@ Flying:
 
   Vector3 PathVec=Drone1.PlanPath();
 
-  Drone1.IsLandingPossible(Main_Scene);
-  Drone1.AdjustOrientation(Lacze);
+  if(Drone1.IsLandingPossible(Main_Scene) == false)
+    exit(0);
+
   getchar();
+  getchar();
+  Drone1.AdjustOrientation(Lacze);
   Drone1.Idle(15, Lacze);
   Drone1.DrawVerticalFlight(AscensionVector, Lacze);
   Drone1.Idle(2, Lacze);

@@ -81,6 +81,8 @@ public:
 
   bool DrawHorizontalFlight(Vector3, PzG::LaczeDoGNUPlota);
 
+  bool ChangeFlightPath(Vector3);
+
   virtual double GetDiameter() override;
 
   bool IsLandingPossible( const Scene &Current_Scene ) const;

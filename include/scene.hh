@@ -26,6 +26,8 @@ public:
 
   void AddDrone(Drone &Arg)
   {
+    std::cout<<"dodano drona"<<std::endl;
+
     std::shared_ptr  Ptr_Drone = std::make_shared<Drone>( Arg );
     _SceneObjectList.push_back(Ptr_Drone);
     _DroneList.push_back(Ptr_Drone);
@@ -33,6 +35,8 @@ public:
 
   void AddPlateau( Plateau &Arg )
   {
+    std::cout<<"dodano plaskowyz"<<std::endl;
+
    std::shared_ptr Ptr_Mountain = std::make_shared<SceneObject>( Arg );
    _SceneObjectList.push_back(Ptr_Mountain);
   }
@@ -45,24 +49,31 @@ public:
 
 };
 
-bool SceneObject::DoDiametersInterfere( SceneObject Bandit )
+bool SceneObject::DoDiametersInterfere( double Radius, Vector3 Center )
 {
-  Vector3 CentersConnected = this->Structure.GetPosition() - Bandit.Structure.GetPosition();
+  Vector3 CentersConnected = this->Structure.GetPosition() - Center;
+  CentersConnected[2]=0;
 
-  if( Bandit.GetDiameter()+this->GetDiameter() > CentersConnected.Length())
-    return false;
-  else
+  std::cout<<Radius<<" "<<this->GetDiameter()<<std::endl;
+
+  /*std::cout<<Radius+this->GetDiameter()<<std::endl;
+  std::cout<<CentersConnected.Length()<<std::endl;*/
+
+  if( Radius+this->GetDiameter() >= CentersConnected.Length())
     return true;
+  else
+    return false;
 }
 
 bool Drone::IsLandingPossible( const Scene &Current_Scene ) const
 {
-  std::shared_ptr<SceneObject> WOb=std::make_shared<Drone>(*this);
+  //std::shared_ptr<SceneObject> WOb=std::make_shared<Drone>(*this);
 
   for (const std::shared_ptr<SceneObject> &Ptr_SceneObjects : Current_Scene.GetSceneObjList()  ) {
-    SceneObject *tmp=Ptr_SceneObjects.get();
-    if ( &Ptr_SceneObjects == &WOb ) continue;
-    if (Ptr_SceneObjects->DoDiametersInterfere(*tmp)){
+    //SceneObject *tmp=Ptr_SceneObjects.get();
+    if (Ptr_SceneObjects.get() == this ) {continue;}
+    if (Ptr_SceneObjects->DoDiametersInterfere( const_cast<Drone *>(this)->GetDiameter(), const_cast<Drone *>(this)->Body.GetPosition()+const_cast<Drone *>(this)->PlanPath() )==true)
+    {
       std::cout<<"Landing site obstructed! Aborted flight!"<<std::endl;
       return false;
     }
